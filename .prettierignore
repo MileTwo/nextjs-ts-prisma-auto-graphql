@@ -1,0 +1,7 @@
+.next/
+node_modules/
+charts/
+prisma/migrations/
+prisma/schema.prisma
+CHANGELOG.md
+coverage/
