@@ -1,14 +1,20 @@
 import { AppProps } from 'next/app';
 import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import theme from '../lib/theme';
 import React, { useEffect } from 'react';
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
+
+import theme from '../lib/theme';
+
+export const client = new ApolloClient({
+    uri: '/api/graphql',
+    cache: new InMemoryCache(),
+});
 
 // Determines if we are running on server or in client.
 const isServerSideRendered = () => {
     return typeof window === 'undefined';
 };
-
 /**
  * Accessibility tool - outputs to devtools console on dev only and client-side only.
  * @see https://github.com/dequelabs/axe-core-npm
@@ -32,9 +38,11 @@ const App = ({ Component, pageProps }: AppProps) => {
 
     return (
         <ThemeProvider theme={theme}>
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-            <CssBaseline />
-            <Component {...pageProps} />
+            <ApolloProvider client={client}>
+                {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                <CssBaseline />
+                <Component {...pageProps} />
+            </ApolloProvider>
         </ThemeProvider>
     );
 };

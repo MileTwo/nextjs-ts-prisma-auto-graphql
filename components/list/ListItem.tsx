@@ -1,4 +1,3 @@
-import Image from '../Image';
 import {
     ListItem as MUIListItem,
     ListItemAvatar,
@@ -10,8 +9,10 @@ import {
     createStyles,
     Theme,
 } from '@material-ui/core';
+
+import Image from '../Image';
 import Link from '../link/Link';
-import { Image as ImageType } from '../../pages/index';
+import { Maybe } from '../../types/gen/graphql-types';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -33,7 +34,7 @@ export type Link = {
 
 type Props = {
     name: string;
-    image: ImageType | undefined;
+    image: Maybe<string> | undefined;
     link: Link;
 };
 

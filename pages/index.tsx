@@ -1,9 +1,11 @@
-import { GetServerSideProps } from 'next';
-import { makeStyles, createStyles, Typography, Theme, List, Grid } from '@material-ui/core';
+import { makeStyles, createStyles, Typography, Theme, List, Grid, Button } from '@material-ui/core';
+import { useState } from 'react';
+import { gql } from '@apollo/client';
 import Layout from '../components/layout';
-import ListItem, { Link } from '../components/list/ListItem';
-
-import { tools } from '../lib/tools';
+import ToolDialog from '../components/dialog/ToolDialog';
+import { useToolsQuery } from '../types/gen/graphql-types';
+import ListItem from '../components/list/ListItem';
+import { LinkProps } from '../components/link/Link';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -23,30 +25,55 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export type Image = { src: string; width: number; height: number };
-interface Props {
-    tools: { name: string; image?: Image }[];
-}
+export const QUERY_TOOLS = gql`
+    query Tools {
+        tools(orderBy: { name: asc }) {
+            id
+            name
+            description
+            link
+            image
+        }
+    }
+`;
 
-export default function Home({ tools }: Props) {
+export default function Home() {
+    const [dialogOpen, setDialogOpen] = useState(false);
+    // CSR(Client-side rendering) example
+    const { data } = useToolsQuery();
     const classes = useStyles();
 
     return (
         <>
             <Layout title="Next.js example">
                 <Grid container spacing={4} direction="column" className={classes.root}>
-                    <Grid item container spacing={4} direction="column" xs={12} alignItems="center">
-                        <Grid container item alignContent="center" justifyContent="center">
-                            <Typography variant="h5" component="h2">
-                                Tools
-                            </Typography>
+                    <Grid item container spacing={4} direction="column">
+                        <Grid
+                            item
+                            container
+                            spacing={4}
+                            alignContent="center"
+                            justifyContent="center"
+                            direction="column"
+                        >
+                            <Grid item container justifyContent="center">
+                                <Typography variant="h5" component="h2">
+                                    Tools
+                                </Typography>
+                            </Grid>
+                            <Grid item container justifyContent="center">
+                                <Button variant="contained" color="primary" onClick={() => setDialogOpen(true)}>
+                                    Create
+                                </Button>
+                            </Grid>
+                            <ToolDialog open={dialogOpen} onClose={() => setDialogOpen(false)} />
                         </Grid>
                         <Grid item container justifyContent="center">
-                            <List aria-label={tools.join(', ')} className={classes.list}>
-                                {tools.map(({ name, image }) => {
-                                    const link: Link = {
-                                        href: '/tool/[name]',
-                                        as: `/tool/${name}`,
+                            <List aria-label={data?.tools.map((tool) => tool.name).join(', ')} className={classes.list}>
+                                {data?.tools.map(({ name, image, id }) => {
+                                    const link: LinkProps = {
+                                        href: '/tool/[id]',
+                                        as: `/tool/${id}`,
                                         label: 'Learn More',
                                     };
                                     return <ListItem key={name} name={name} image={image} link={link} />;
@@ -59,14 +86,3 @@ export default function Home({ tools }: Props) {
         </>
     );
 }
-
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
-    return {
-        props: {
-            tools: tools.map(({ name, image }) => ({
-                name,
-                image,
-            })),
-        },
-    };
-};
