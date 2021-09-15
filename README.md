@@ -1,34 +1,56 @@
-# Next.js TypeScript Material UI quality checking project <!-- omit in toc -->
+# Next.js TypeScript Prisma GraphQL quality control template <!-- omit in toc -->
 
-Includes TypeScript, Material UI, ESLint, Jest, and React Testing Library
+- [Tools included](#tools-included)
+- [App startup](#app-startup)
+  - [SQLite](#sqlite)
+  - [Postgres](#postgres)
+- [Using Prisma](#using-prisma)
+  - [Adding a table to your database](#adding-a-table-to-your-database)
+  - [Creating migrations](#creating-migrations)
+  - [Seeding sample data](#seeding-sample-data)
+  - [Using prisma client to perform database actions](#using-prisma-client-to-perform-database-actions)
+- [Using GraphQL](#using-graphql)
+  - [GraphQL Playground](#graphql-playground)
+- [Scripts](#scripts)
+  - [generate-types](#generate-types)
+  - [watch-queries](#watch-queries)
+  - [generate](#generate)
+  - [migrate](#migrate)
+  - [deploy](#deploy)
+  - [reset](#reset)
+  - [seed](#seed)
+  - [studio](#studio)
+  - [prisma](#prisma)
+  - [build](#build)
+  - [dev](#dev)
+  - [format](#format)
+  - [lint](#lint)
+  - [start](#start)
+  - [test](#test)
+  - [type-check](#type-check)
+  - [quality](#quality)
+- [Accessibility](#accessibility)
+  - [@axe-core/react](#axe-corereact)
 
--   [App startup](#app-startup)
-    -   [SQLite](#sqlite)
-    -   [Postgres](#postgres)
--   [Using Prisma](#using-prisma)
-    -   [Adding a table to your database](#adding-a-table-to-your-database)
-    -   [Creating migrations](#creating-migrations)
-    -   [Seeding sample data](#seeding-sample-data)
-    -   [Using prisma client to perform database actions](#using-prisma-client-to-perform-database-actions)
--   [Scripts](#scripts)
-    -   [generate-types](#generate-types)
-    -   [watch-queries](#watch-queries)
-    -   [generate](#generate)
-    -   [migrate](#migrate)
-    -   [deploy](#deploy)
-    -   [reset](#reset)
-    -   [seed](#seed)
-    -   [studio](#studio)
-    -   [prisma](#prisma)
-    -   [build](#build)
-    -   [dev](#dev)
-    -   [format](#format)
-    -   [lint](#lint)
-    -   [start](#start)
-    -   [test](#test)
-    -   [type-check](#type-check)
-    -   [quality](#quality)
--   [Accessibility ](#accessibility)
+## Tools included
+
+-   [Next.js](https://nextjs.org/)
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [GraphQL](https://graphql.org/)
+    -   [Apollo](https://www.apollographql.com/)
+        -   [Micro Server](https://www.npmjs.com/package/apollo-server-micro)
+        -   [React Client](https://www.apollographql.com/docs/react/)
+    -   [TypeGraphQL](https://typegraphql.com/)
+        -   [TypeGraphQL-Prisma automatic CRUD plugin](https://prisma.typegraphql.com/)
+    -   [GraphQL code generator](https://www.graphql-code-generator.com/)
+-   [Prisma](https://www.prisma.io/)
+-   [Material-UI](https://material-ui.com/)
+-   [React Hook Form](https://react-hook-form.com/)
+-   Quality tools
+    -   [ESLint](https://eslint.org/)
+    -   [Prettier](https://prettier.io/)
+    -   [Jest](https://jestjs.io/)
+    -   [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/)
 
 ## App startup
 
@@ -99,6 +121,28 @@ To learn more visit the [prisma seeding documentation](https://www.prisma.io/doc
 Using the prisma client you can do the various actions required to build applications utilizing a database.
 
 To learn more visit [working with the prisma client](https://www.prisma.io/docs/concepts/components/prisma-client/working-with-prismaclient).
+
+## Using GraphQL
+
+> GraphQL helps developer experience by providing tools to interact with data sources given a query language. | [Source](https://graphql.org/)
+
+### GraphQL Playground
+
+The GraphQL playground is where you can test out and write queries and mutations before consuming these requests in the client code. To view the playground, while your server is running, visit [http://localhost:3000/api/graphql](http://localhost:3000/api/graphql).
+
+Along the right you will see tabs, `Docs` and `Schema`. This is equivalent to REST's Swagger API that explains all of its endpoints a developer can call. The only difference here is graphql is a universal query language giving you the developer the ability to query as much or as little as needed. So view the `Docs` to see what you can query.
+
+here is an example query
+
+```gql
+{
+    tools {
+        id
+        name
+        description
+    }
+}
+```
 
 ## Scripts
 
