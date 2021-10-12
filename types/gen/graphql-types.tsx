@@ -521,14 +521,14 @@ export type CreateToolMutation = { __typename?: 'Mutation', createTool: { __type
 export type ToolsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ToolsQuery = { __typename?: 'Query', tools: Array<{ __typename?: 'Tool', id: number, name: string, description: string, link: string, image?: Maybe<string> }> };
+export type ToolsQuery = { __typename?: 'Query', tools: Array<{ __typename?: 'Tool', id: number, name: string, description: string, link: string, image?: string | null | undefined }> };
 
 export type ToolQueryVariables = Exact<{
   id: Scalars['Int'];
 }>;
 
 
-export type ToolQuery = { __typename?: 'Query', tool?: Maybe<{ __typename?: 'Tool', id: number, name: string, description: string, link: string, image?: Maybe<string> }> };
+export type ToolQuery = { __typename?: 'Query', tool?: { __typename?: 'Tool', id: number, name: string, description: string, link: string, image?: string | null | undefined } | null | undefined };
 
 
 export const CreateToolDocument = gql`
