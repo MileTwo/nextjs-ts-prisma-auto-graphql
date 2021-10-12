@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link as MUILink } from '@material-ui/core';
+import { Link as MUILink } from '@mui/material';
 import Link from 'next/link';
 
 export type LinkProps = {

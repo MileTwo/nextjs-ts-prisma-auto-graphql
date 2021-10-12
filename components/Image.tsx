@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import NextImage from 'next/image';
-import { Avatar, createStyles, makeStyles, Theme } from '@material-ui/core';
-
+import { Avatar, Theme } from '@mui/material';
+import { createStyles, makeStyles } from '@mui/styles';
 import { Maybe } from '../types/gen/graphql-types';
 
 interface Props {
