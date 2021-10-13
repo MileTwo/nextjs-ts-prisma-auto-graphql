@@ -1,4 +1,5 @@
-import { makeStyles, createStyles, Typography, Theme, List, Grid, Button } from '@material-ui/core';
+import { Typography, Theme, List, Grid, Button } from '@mui/material';
+import { makeStyles, createStyles } from '@mui/styles';
 import { useState } from 'react';
 import { gql } from '@apollo/client';
 import Layout from '../components/layout';
@@ -11,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         list: {
             minWidth: theme.breakpoints.values.sm,
-            [theme.breakpoints.down('xs')]: {
+            [theme.breakpoints.down('sm')]: {
                 width: '100%',
                 minWidth: 100,
             },

@@ -1,9 +1,9 @@
-import { Button, Grid, makeStyles, Theme, Link as MUILink, Typography } from '@material-ui/core';
+import { Button, Grid, Theme, Link as MUILink, Typography, Breadcrumbs } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../components/layout';
-import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Image from '../../components/Image';
 import gql from 'graphql-tag';
 import { useToolQuery } from '../../types/gen/graphql-types';

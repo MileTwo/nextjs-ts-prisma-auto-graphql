@@ -4,7 +4,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 import { NextRouter } from 'next/router';
-import { ThemeProvider } from '@material-ui/core';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material';
 import { MockedProvider, MockedResponse } from '@apollo/client/testing';
 
 import theme from '../lib/theme';
@@ -54,11 +54,13 @@ export function customRender(
     { wrapper, router, mocks, ...options }: RenderOptions & { mocks?: MockedResponse[] } = {}
 ) {
     wrapper = ({ children }) => (
-        <ThemeProvider theme={theme}>
-            <MockedProvider mocks={mocks}>
-                <RouterContext.Provider value={{ ...mockRouter, ...router }}>{children}</RouterContext.Provider>
-            </MockedProvider>
-        </ThemeProvider>
+        <StyledEngineProvider injectFirst>
+            <ThemeProvider theme={theme}>
+                <MockedProvider mocks={mocks}>
+                    <RouterContext.Provider value={{ ...mockRouter, ...router }}>{children}</RouterContext.Provider>
+                </MockedProvider>
+            </ThemeProvider>
+        </StyledEngineProvider>
     );
 
     return render(ui, { wrapper, ...options });
