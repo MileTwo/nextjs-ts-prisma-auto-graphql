@@ -19,7 +19,7 @@
         "react-dom": "^17.0.2",
         "react-hook-form": "^7.17.2",
         "reflect-metadata": "^0.1.13",
-        "ts-jest": "^27.0.5",
+        "ts-jest": "^27.0.6",
         "type-graphql": "^1.1.1"
     },
     "keywords": [
@@ -72,10 +72,10 @@
         "@graphql-codegen/typescript": "^2.2.2",
         "@graphql-codegen/typescript-operations": "^2.1.6",
         "@graphql-codegen/typescript-react-apollo": "^3.1.4",
-        "@testing-library/dom": "^8.7.2",
+        "@testing-library/dom": "^8.9.1",
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^12.1.2",
-        "@types/node": "^16.10.3",
+        "@types/node": "^16.11.0",
         "@types/react": "^17.0.28",
         "@types/react-dom": "^17.0.9",
         "@typescript-eslint/eslint-plugin": "^5.0.0",
