@@ -6,3 +6,4 @@ prisma/schema.prisma
 CHANGELOG.md
 coverage/
 gen/
+*.yml
