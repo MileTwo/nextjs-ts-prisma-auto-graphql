@@ -1,7 +1,6 @@
-import { createTheme, responsiveFontSizes, ThemeOptions } from '@material-ui/core/styles';
-import '@material-ui/core/styles';
+import { createTheme, responsiveFontSizes, ThemeOptions } from '@mui/material/styles';
 
-declare module '@material-ui/core/styles/createTypography' {
+declare module '@mui/material/styles/createTypography' {
     interface Typography {
         fontWeightHeavy: number;
     }

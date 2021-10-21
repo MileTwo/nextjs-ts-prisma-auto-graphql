@@ -1,15 +1,5 @@
-import {
-    ListItem as MUIListItem,
-    ListItemAvatar,
-    Avatar,
-    ListItemText,
-    Grid,
-    Typography,
-    makeStyles,
-    createStyles,
-    Theme,
-} from '@material-ui/core';
-
+import { ListItem as MUIListItem, ListItemAvatar, Avatar, ListItemText, Grid, Typography, Theme } from '@mui/material';
+import { makeStyles, createStyles } from '@mui/styles';
 import Image from '../Image';
 import Link from '../link/Link';
 import { Maybe } from '../../types/gen/graphql-types';

@@ -1,4 +1,4 @@
-import { Dialog, DialogTitle, DialogContent, Grid, TextField, DialogActions, Button } from '@material-ui/core';
+import { Dialog, DialogTitle, DialogContent, Grid, TextField, DialogActions, Button } from '@mui/material';
 import { Tool } from '@prisma/client';
 import gql from 'graphql-tag';
 import React, { ReactElement } from 'react';
@@ -119,7 +119,7 @@ export default function ToolDialog({ open, onClose }: Props): ReactElement {
                     </Grid>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={onClose} color="default" variant="contained">
+                    <Button onClick={onClose} variant="contained">
                         CANCEL
                     </Button>
                     <Button onClick={() => reset()} type="reset" color="secondary" variant="contained">
