@@ -3,10 +3,10 @@ import { makeStyles } from '@mui/styles';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 import { useRouter } from 'next/router';
-import Layout from '../../components/layout';
-import Image from '../../components/Image';
+import Layout from 'components/layout';
+import Image from 'components/Image';
 import gql from 'graphql-tag';
-import { useToolQuery } from '../../types/gen/graphql-types';
+import { useToolQuery } from 'types/gen/graphql-types';
 
 const useStyles = makeStyles((theme: Theme) => ({
     description: {

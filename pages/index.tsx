@@ -2,11 +2,11 @@ import { Typography, Theme, List, Grid, Button } from '@mui/material';
 import { makeStyles, createStyles } from '@mui/styles';
 import { useState } from 'react';
 import { gql } from '@apollo/client';
-import Layout from '../components/layout';
-import ToolDialog from '../components/dialog/ToolDialog';
-import { useToolsQuery } from '../types/gen/graphql-types';
-import ListItem from '../components/list/ListItem';
-import { LinkProps } from '../components/link/Link';
+import Layout from 'components/layout';
+import ToolDialog from 'components/dialog/ToolDialog';
+import { useToolsQuery } from 'types/gen/graphql-types';
+import ListItem from 'components/list/ListItem';
+import { LinkProps } from 'components/link/Link';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

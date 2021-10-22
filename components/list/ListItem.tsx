@@ -2,7 +2,7 @@ import { ListItem as MUIListItem, ListItemAvatar, Avatar, ListItemText, Grid, Ty
 import { makeStyles, createStyles } from '@mui/styles';
 import Image from '../Image';
 import Link from '../link/Link';
-import { Maybe } from '../../types/gen/graphql-types';
+import { Maybe } from 'types/gen/graphql-types';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

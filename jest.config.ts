@@ -11,6 +11,12 @@ const config: Config.InitialOptions = {
     },
     testEnvironment: 'jsdom',
     moduleNameMapper: {
+        '^components/(.*)$': '<rootDir>/components/$1',
+        '^lib/(.*)$': '<rootDir>/lib/$1',
+        '^pages/(.*)$': '<rootDir>/pages/$1',
+        '^services/(.*)$': '<rootDir>/services/$1',
+        '^tests/(.*)': '<rootDir>/tests/$1',
+        '^types/(.*)$': '<rootDir>/types/$1',
         '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     },
     verbose: true,

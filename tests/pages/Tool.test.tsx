@@ -1,7 +1,7 @@
 // you want to import from test-utils instead of testing-library/react since we overwrote the render function to support our wrapper providers
 import { render, screen, waitFor } from '../test-utils';
-import Tool, { QUERY_TOOL } from '../../pages/tool/[id]';
-import { tools } from '../../lib/tools';
+import Tool, { QUERY_TOOL } from 'pages/tool/[id]';
+import { tools } from 'lib/tools';
 
 describe('Tool Page', () => {
     it('should render  a page without errors', async () => {
