@@ -8,4 +8,4 @@ CREATE TABLE "Tool" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Tool.name_unique" ON "Tool"("name");
+CREATE UNIQUE INDEX "Tool_name_key" ON "Tool"("name");

@@ -14,8 +14,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Next.js
+# Next.js and build
 /.next
+/dist
 
 # Prisma
 /prisma/*.db
