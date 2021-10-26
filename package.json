@@ -56,7 +56,7 @@
         "deploy": "prisma migrate deploy",
         "reset": "prisma migrate reset",
         "seed": "prisma db seed",
-        "server-dev": "next",
+        "server-dev": "next -p 8989",
         "studio": "prisma studio",
         "prisma": "prisma format && npm run migrate && npm run seed",
         "generate-types": "graphql-codegen --config codegen.yml",
