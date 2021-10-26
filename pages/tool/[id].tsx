@@ -73,6 +73,7 @@ export default function ToolInfo(): ReactElement {
                     </Grid>
                     <Grid item xs={12} container justifyContent="center" alignItems="center">
                         {data?.tool?.image && (
+                            // eslint-disable-next-line jsx-a11y/alt-text
                             <Image image={data?.tool?.image} name={data?.tool?.name} aria-hidden="true" />
                         )}
                         <Typography variant="h2" className={classes.title}>

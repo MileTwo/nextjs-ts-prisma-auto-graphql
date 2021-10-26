@@ -33,6 +33,7 @@ export default function Image({ image, name }: Props): ReactElement {
     return (
         <>
             {/* used for non optimizable entries (files not stored in public directory) */}
+            {/* eslint-disable-next-line @next/next/no-img-element*/}
             <img data-testid="image" src={image || firstLetter} width={50} height={50} alt={name} />
         </>
     );

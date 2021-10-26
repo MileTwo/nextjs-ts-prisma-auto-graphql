@@ -36,6 +36,7 @@ export default function ListItem({ name, image, link }: Props) {
                 <ListItemAvatar>
                     <Avatar alt={name} className={classes.avatar}>
                         {/* NextJS Image optimization example. Props are src(any file under the public dir), width, and height */}
+                        {/* eslint-disable-next-line jsx-a11y/alt-text*/}
                         <Image image={image} name={name} />
                     </Avatar>
                 </ListItemAvatar>

@@ -8,7 +8,12 @@
         "ecmaVersion": 2020,
         "sourceType": "module"
     },
-    "extends": ["prettier", "eslint:recommended", "plugin:@typescript-eslint/recommended"],
+    "extends": [
+        "prettier",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "next/core-web-vitals"
+    ],
     "plugins": ["prettier", "@typescript-eslint"],
     "rules": {
         "react/react-in-jsx-scope": "off",
@@ -16,7 +21,8 @@
         "prettier/prettier": "error",
         "@typescript-eslint/explicit-module-boundary-types": 0,
         "@typescript-eslint/ban-ts-ignore": 0,
-        "@typescript-eslint/ban-ts-comment": 0
+        "@typescript-eslint/ban-ts-comment": 0,
+        "no-console": 1
     },
     "globals": {
         "React": "writable"
