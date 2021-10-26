@@ -1,0 +1,30 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "project": "./tsconfig.json",
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "extends": ["prettier", "eslint:recommended", "plugin:@typescript-eslint/recommended"],
+    "plugins": ["prettier", "@typescript-eslint"],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        // all prettier file errors
+        "prettier/prettier": "error",
+        "@typescript-eslint/explicit-module-boundary-types": 0,
+        "@typescript-eslint/ban-ts-ignore": 0,
+        "@typescript-eslint/ban-ts-comment": 0
+    },
+    "globals": {
+        "React": "writable"
+    },
+    "overrides": [
+        {
+            "files": ["*.js"],
+            "parser": "babel-eslint"
+        }
+    ]
+}
