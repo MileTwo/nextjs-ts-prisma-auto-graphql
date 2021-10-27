@@ -7,7 +7,7 @@ const config: Config.InitialOptions = {
     testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
     transform: {
         '\\.m?jsx?$': 'jest-esm-transformer',
-        '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
+        '^.+\\.(js|jsx|ts|tsx)$': ['<rootDir>/node_modules/babel-jest', { configFile: './test.babelrc' }],
     },
     testEnvironment: 'jsdom',
     moduleNameMapper: {
