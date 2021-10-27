@@ -1,8 +1,8 @@
 import { ListItem as MUIListItem, ListItemAvatar, Avatar, ListItemText, Grid, Typography, Theme } from '@mui/material';
 import { makeStyles, createStyles } from '@mui/styles';
-import Image from '../Image';
-import Link from '../link/Link';
 import { Maybe } from 'types/gen/graphql-types';
+import Link from '../link/Link';
+import Media from '../Media';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -36,7 +36,7 @@ export default function ListItem({ name, image, link }: Props) {
                 <ListItemAvatar>
                     <Avatar alt={name} className={classes.avatar}>
                         {/* NextJS Image optimization example. Props are src(any file under the public dir), width, and height */}
-                        <Image image={image} name={name} />
+                        <Media image={image} name={name} />
                     </Avatar>
                 </ListItemAvatar>
                 <ListItemText>
