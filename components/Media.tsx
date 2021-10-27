@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export default function Image({ image, name }: Props): ReactElement {
+export default function Media({ image, name }: Props): ReactElement {
     const firstLetter = name.slice(0, 1).toUpperCase();
     const classes = useStyles();
 
