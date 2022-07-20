@@ -1,30 +1,12 @@
-import { Typography, Theme, List, Grid, Button } from '@mui/material';
-import { makeStyles, createStyles } from '@mui/styles';
-import { useState } from 'react';
 import { gql } from '@apollo/client';
-import Layout from 'components/layout';
+import { Button, Grid, List, Typography } from '@mui/material';
 import ToolDialog from 'components/dialog/ToolDialog';
-import { useToolsQuery } from 'types/gen/graphql-types';
-import ListItem from 'components/list/ListItem';
+import Layout from 'components/layout';
 import { LinkProps } from 'components/link/Link';
-
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        list: {
-            minWidth: theme.breakpoints.values.sm,
-            [theme.breakpoints.down('sm')]: {
-                width: '100%',
-                minWidth: 100,
-            },
-        },
-        root: {
-            padding: '2em',
-        },
-        linkButton: {
-            marginLeft: '1em',
-        },
-    })
-);
+import ListItem from 'components/list/ListItem';
+import theme from 'lib/theme';
+import { useState } from 'react';
+import { useToolsQuery } from 'types/gen/graphql-types';
 
 export const QUERY_TOOLS = gql`
     query Tools {
@@ -42,12 +24,11 @@ export default function Home() {
     const [dialogOpen, setDialogOpen] = useState(false);
     // CSR(Client-side rendering) example
     const { data } = useToolsQuery();
-    const classes = useStyles();
 
     return (
         <>
             <Layout title="Next.js example">
-                <Grid container spacing={4} direction="column" className={classes.root}>
+                <Grid container spacing={4} direction="column" sx={{ padding: '2em' }}>
                     <Grid item container spacing={4} direction="column">
                         <Grid
                             item
@@ -70,7 +51,16 @@ export default function Home() {
                             <ToolDialog open={dialogOpen} onClose={() => setDialogOpen(false)} />
                         </Grid>
                         <Grid item container justifyContent="center">
-                            <List aria-label={data?.tools.map((tool) => tool.name).join(', ')} className={classes.list}>
+                            <List
+                                aria-label={data?.tools.map((tool) => tool.name).join(', ')}
+                                sx={{
+                                    minWidth: theme.breakpoints.values.sm,
+                                    [theme.breakpoints.down('sm')]: {
+                                        width: '100%',
+                                        minWidth: 100,
+                                    },
+                                }}
+                            >
                                 {data?.tools.map(({ name, image, id }) => {
                                     const link: LinkProps = {
                                         href: '/tool/[id]',

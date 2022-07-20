@@ -1,10 +1,11 @@
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 export type Maybe<T> = T | null;
+export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
-const defaultOptions =  {}
+const defaultOptions = {} as const;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -29,189 +30,189 @@ export type AggregateTool = {
 };
 
 export type IntFilter = {
-  equals?: Maybe<Scalars['Int']>;
-  gt?: Maybe<Scalars['Int']>;
-  gte?: Maybe<Scalars['Int']>;
-  in?: Maybe<Array<Scalars['Int']>>;
-  lt?: Maybe<Scalars['Int']>;
-  lte?: Maybe<Scalars['Int']>;
-  not?: Maybe<NestedIntFilter>;
-  notIn?: Maybe<Array<Scalars['Int']>>;
+  equals?: InputMaybe<Scalars['Int']>;
+  gt?: InputMaybe<Scalars['Int']>;
+  gte?: InputMaybe<Scalars['Int']>;
+  in?: InputMaybe<Array<Scalars['Int']>>;
+  lt?: InputMaybe<Scalars['Int']>;
+  lte?: InputMaybe<Scalars['Int']>;
+  not?: InputMaybe<NestedIntFilter>;
+  notIn?: InputMaybe<Array<Scalars['Int']>>;
 };
 
 export type IntWithAggregatesFilter = {
-  _avg?: Maybe<NestedFloatFilter>;
-  _count?: Maybe<NestedIntFilter>;
-  _max?: Maybe<NestedIntFilter>;
-  _min?: Maybe<NestedIntFilter>;
-  _sum?: Maybe<NestedIntFilter>;
-  equals?: Maybe<Scalars['Int']>;
-  gt?: Maybe<Scalars['Int']>;
-  gte?: Maybe<Scalars['Int']>;
-  in?: Maybe<Array<Scalars['Int']>>;
-  lt?: Maybe<Scalars['Int']>;
-  lte?: Maybe<Scalars['Int']>;
-  not?: Maybe<NestedIntWithAggregatesFilter>;
-  notIn?: Maybe<Array<Scalars['Int']>>;
+  _avg?: InputMaybe<NestedFloatFilter>;
+  _count?: InputMaybe<NestedIntFilter>;
+  _max?: InputMaybe<NestedIntFilter>;
+  _min?: InputMaybe<NestedIntFilter>;
+  _sum?: InputMaybe<NestedIntFilter>;
+  equals?: InputMaybe<Scalars['Int']>;
+  gt?: InputMaybe<Scalars['Int']>;
+  gte?: InputMaybe<Scalars['Int']>;
+  in?: InputMaybe<Array<Scalars['Int']>>;
+  lt?: InputMaybe<Scalars['Int']>;
+  lte?: InputMaybe<Scalars['Int']>;
+  not?: InputMaybe<NestedIntWithAggregatesFilter>;
+  notIn?: InputMaybe<Array<Scalars['Int']>>;
 };
 
 export type Mutation = {
   __typename?: 'Mutation';
-  createTool: Tool;
+  createOneTool: Tool;
   deleteManyTool: AffectedRowsOutput;
-  deleteTool?: Maybe<Tool>;
+  deleteOneTool?: Maybe<Tool>;
   updateManyTool: AffectedRowsOutput;
-  updateTool?: Maybe<Tool>;
-  upsertTool: Tool;
+  updateOneTool?: Maybe<Tool>;
+  upsertOneTool: Tool;
 };
 
 
-export type MutationCreateToolArgs = {
+export type MutationCreateOneToolArgs = {
   data: ToolCreateInput;
 };
 
 
 export type MutationDeleteManyToolArgs = {
-  where?: Maybe<ToolWhereInput>;
+  where?: InputMaybe<ToolWhereInput>;
 };
 
 
-export type MutationDeleteToolArgs = {
+export type MutationDeleteOneToolArgs = {
   where: ToolWhereUniqueInput;
 };
 
 
 export type MutationUpdateManyToolArgs = {
   data: ToolUpdateManyMutationInput;
-  where?: Maybe<ToolWhereInput>;
+  where?: InputMaybe<ToolWhereInput>;
 };
 
 
-export type MutationUpdateToolArgs = {
+export type MutationUpdateOneToolArgs = {
   data: ToolUpdateInput;
   where: ToolWhereUniqueInput;
 };
 
 
-export type MutationUpsertToolArgs = {
+export type MutationUpsertOneToolArgs = {
   create: ToolCreateInput;
   update: ToolUpdateInput;
   where: ToolWhereUniqueInput;
 };
 
 export type NestedFloatFilter = {
-  equals?: Maybe<Scalars['Float']>;
-  gt?: Maybe<Scalars['Float']>;
-  gte?: Maybe<Scalars['Float']>;
-  in?: Maybe<Array<Scalars['Float']>>;
-  lt?: Maybe<Scalars['Float']>;
-  lte?: Maybe<Scalars['Float']>;
-  not?: Maybe<NestedFloatFilter>;
-  notIn?: Maybe<Array<Scalars['Float']>>;
+  equals?: InputMaybe<Scalars['Float']>;
+  gt?: InputMaybe<Scalars['Float']>;
+  gte?: InputMaybe<Scalars['Float']>;
+  in?: InputMaybe<Array<Scalars['Float']>>;
+  lt?: InputMaybe<Scalars['Float']>;
+  lte?: InputMaybe<Scalars['Float']>;
+  not?: InputMaybe<NestedFloatFilter>;
+  notIn?: InputMaybe<Array<Scalars['Float']>>;
 };
 
 export type NestedIntFilter = {
-  equals?: Maybe<Scalars['Int']>;
-  gt?: Maybe<Scalars['Int']>;
-  gte?: Maybe<Scalars['Int']>;
-  in?: Maybe<Array<Scalars['Int']>>;
-  lt?: Maybe<Scalars['Int']>;
-  lte?: Maybe<Scalars['Int']>;
-  not?: Maybe<NestedIntFilter>;
-  notIn?: Maybe<Array<Scalars['Int']>>;
+  equals?: InputMaybe<Scalars['Int']>;
+  gt?: InputMaybe<Scalars['Int']>;
+  gte?: InputMaybe<Scalars['Int']>;
+  in?: InputMaybe<Array<Scalars['Int']>>;
+  lt?: InputMaybe<Scalars['Int']>;
+  lte?: InputMaybe<Scalars['Int']>;
+  not?: InputMaybe<NestedIntFilter>;
+  notIn?: InputMaybe<Array<Scalars['Int']>>;
 };
 
 export type NestedIntNullableFilter = {
-  equals?: Maybe<Scalars['Int']>;
-  gt?: Maybe<Scalars['Int']>;
-  gte?: Maybe<Scalars['Int']>;
-  in?: Maybe<Array<Scalars['Int']>>;
-  lt?: Maybe<Scalars['Int']>;
-  lte?: Maybe<Scalars['Int']>;
-  not?: Maybe<NestedIntNullableFilter>;
-  notIn?: Maybe<Array<Scalars['Int']>>;
+  equals?: InputMaybe<Scalars['Int']>;
+  gt?: InputMaybe<Scalars['Int']>;
+  gte?: InputMaybe<Scalars['Int']>;
+  in?: InputMaybe<Array<Scalars['Int']>>;
+  lt?: InputMaybe<Scalars['Int']>;
+  lte?: InputMaybe<Scalars['Int']>;
+  not?: InputMaybe<NestedIntNullableFilter>;
+  notIn?: InputMaybe<Array<Scalars['Int']>>;
 };
 
 export type NestedIntWithAggregatesFilter = {
-  _avg?: Maybe<NestedFloatFilter>;
-  _count?: Maybe<NestedIntFilter>;
-  _max?: Maybe<NestedIntFilter>;
-  _min?: Maybe<NestedIntFilter>;
-  _sum?: Maybe<NestedIntFilter>;
-  equals?: Maybe<Scalars['Int']>;
-  gt?: Maybe<Scalars['Int']>;
-  gte?: Maybe<Scalars['Int']>;
-  in?: Maybe<Array<Scalars['Int']>>;
-  lt?: Maybe<Scalars['Int']>;
-  lte?: Maybe<Scalars['Int']>;
-  not?: Maybe<NestedIntWithAggregatesFilter>;
-  notIn?: Maybe<Array<Scalars['Int']>>;
+  _avg?: InputMaybe<NestedFloatFilter>;
+  _count?: InputMaybe<NestedIntFilter>;
+  _max?: InputMaybe<NestedIntFilter>;
+  _min?: InputMaybe<NestedIntFilter>;
+  _sum?: InputMaybe<NestedIntFilter>;
+  equals?: InputMaybe<Scalars['Int']>;
+  gt?: InputMaybe<Scalars['Int']>;
+  gte?: InputMaybe<Scalars['Int']>;
+  in?: InputMaybe<Array<Scalars['Int']>>;
+  lt?: InputMaybe<Scalars['Int']>;
+  lte?: InputMaybe<Scalars['Int']>;
+  not?: InputMaybe<NestedIntWithAggregatesFilter>;
+  notIn?: InputMaybe<Array<Scalars['Int']>>;
 };
 
 export type NestedStringFilter = {
-  contains?: Maybe<Scalars['String']>;
-  endsWith?: Maybe<Scalars['String']>;
-  equals?: Maybe<Scalars['String']>;
-  gt?: Maybe<Scalars['String']>;
-  gte?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Scalars['String']>>;
-  lt?: Maybe<Scalars['String']>;
-  lte?: Maybe<Scalars['String']>;
-  not?: Maybe<NestedStringFilter>;
-  notIn?: Maybe<Array<Scalars['String']>>;
-  startsWith?: Maybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars['String']>;
+  endsWith?: InputMaybe<Scalars['String']>;
+  equals?: InputMaybe<Scalars['String']>;
+  gt?: InputMaybe<Scalars['String']>;
+  gte?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<Scalars['String']>>;
+  lt?: InputMaybe<Scalars['String']>;
+  lte?: InputMaybe<Scalars['String']>;
+  not?: InputMaybe<NestedStringFilter>;
+  notIn?: InputMaybe<Array<Scalars['String']>>;
+  startsWith?: InputMaybe<Scalars['String']>;
 };
 
 export type NestedStringNullableFilter = {
-  contains?: Maybe<Scalars['String']>;
-  endsWith?: Maybe<Scalars['String']>;
-  equals?: Maybe<Scalars['String']>;
-  gt?: Maybe<Scalars['String']>;
-  gte?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Scalars['String']>>;
-  lt?: Maybe<Scalars['String']>;
-  lte?: Maybe<Scalars['String']>;
-  not?: Maybe<NestedStringNullableFilter>;
-  notIn?: Maybe<Array<Scalars['String']>>;
-  startsWith?: Maybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars['String']>;
+  endsWith?: InputMaybe<Scalars['String']>;
+  equals?: InputMaybe<Scalars['String']>;
+  gt?: InputMaybe<Scalars['String']>;
+  gte?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<Scalars['String']>>;
+  lt?: InputMaybe<Scalars['String']>;
+  lte?: InputMaybe<Scalars['String']>;
+  not?: InputMaybe<NestedStringNullableFilter>;
+  notIn?: InputMaybe<Array<Scalars['String']>>;
+  startsWith?: InputMaybe<Scalars['String']>;
 };
 
 export type NestedStringNullableWithAggregatesFilter = {
-  _count?: Maybe<NestedIntNullableFilter>;
-  _max?: Maybe<NestedStringNullableFilter>;
-  _min?: Maybe<NestedStringNullableFilter>;
-  contains?: Maybe<Scalars['String']>;
-  endsWith?: Maybe<Scalars['String']>;
-  equals?: Maybe<Scalars['String']>;
-  gt?: Maybe<Scalars['String']>;
-  gte?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Scalars['String']>>;
-  lt?: Maybe<Scalars['String']>;
-  lte?: Maybe<Scalars['String']>;
-  not?: Maybe<NestedStringNullableWithAggregatesFilter>;
-  notIn?: Maybe<Array<Scalars['String']>>;
-  startsWith?: Maybe<Scalars['String']>;
+  _count?: InputMaybe<NestedIntNullableFilter>;
+  _max?: InputMaybe<NestedStringNullableFilter>;
+  _min?: InputMaybe<NestedStringNullableFilter>;
+  contains?: InputMaybe<Scalars['String']>;
+  endsWith?: InputMaybe<Scalars['String']>;
+  equals?: InputMaybe<Scalars['String']>;
+  gt?: InputMaybe<Scalars['String']>;
+  gte?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<Scalars['String']>>;
+  lt?: InputMaybe<Scalars['String']>;
+  lte?: InputMaybe<Scalars['String']>;
+  not?: InputMaybe<NestedStringNullableWithAggregatesFilter>;
+  notIn?: InputMaybe<Array<Scalars['String']>>;
+  startsWith?: InputMaybe<Scalars['String']>;
 };
 
 export type NestedStringWithAggregatesFilter = {
-  _count?: Maybe<NestedIntFilter>;
-  _max?: Maybe<NestedStringFilter>;
-  _min?: Maybe<NestedStringFilter>;
-  contains?: Maybe<Scalars['String']>;
-  endsWith?: Maybe<Scalars['String']>;
-  equals?: Maybe<Scalars['String']>;
-  gt?: Maybe<Scalars['String']>;
-  gte?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Scalars['String']>>;
-  lt?: Maybe<Scalars['String']>;
-  lte?: Maybe<Scalars['String']>;
-  not?: Maybe<NestedStringWithAggregatesFilter>;
-  notIn?: Maybe<Array<Scalars['String']>>;
-  startsWith?: Maybe<Scalars['String']>;
+  _count?: InputMaybe<NestedIntFilter>;
+  _max?: InputMaybe<NestedStringFilter>;
+  _min?: InputMaybe<NestedStringFilter>;
+  contains?: InputMaybe<Scalars['String']>;
+  endsWith?: InputMaybe<Scalars['String']>;
+  equals?: InputMaybe<Scalars['String']>;
+  gt?: InputMaybe<Scalars['String']>;
+  gte?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<Scalars['String']>>;
+  lt?: InputMaybe<Scalars['String']>;
+  lte?: InputMaybe<Scalars['String']>;
+  not?: InputMaybe<NestedStringWithAggregatesFilter>;
+  notIn?: InputMaybe<Array<Scalars['String']>>;
+  startsWith?: InputMaybe<Scalars['String']>;
 };
 
 export type NullableStringFieldUpdateOperationsInput = {
-  set?: Maybe<Scalars['String']>;
+  set?: InputMaybe<Scalars['String']>;
 };
 
 export type Query = {
@@ -225,31 +226,31 @@ export type Query = {
 
 
 export type QueryAggregateToolArgs = {
-  cursor?: Maybe<ToolWhereUniqueInput>;
-  orderBy?: Maybe<Array<ToolOrderByWithRelationInput>>;
-  skip?: Maybe<Scalars['Int']>;
-  take?: Maybe<Scalars['Int']>;
-  where?: Maybe<ToolWhereInput>;
+  cursor?: InputMaybe<ToolWhereUniqueInput>;
+  orderBy?: InputMaybe<Array<ToolOrderByWithRelationInput>>;
+  skip?: InputMaybe<Scalars['Int']>;
+  take?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<ToolWhereInput>;
 };
 
 
 export type QueryFindFirstToolArgs = {
-  cursor?: Maybe<ToolWhereUniqueInput>;
-  distinct?: Maybe<Array<ToolScalarFieldEnum>>;
-  orderBy?: Maybe<Array<ToolOrderByWithRelationInput>>;
-  skip?: Maybe<Scalars['Int']>;
-  take?: Maybe<Scalars['Int']>;
-  where?: Maybe<ToolWhereInput>;
+  cursor?: InputMaybe<ToolWhereUniqueInput>;
+  distinct?: InputMaybe<Array<ToolScalarFieldEnum>>;
+  orderBy?: InputMaybe<Array<ToolOrderByWithRelationInput>>;
+  skip?: InputMaybe<Scalars['Int']>;
+  take?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<ToolWhereInput>;
 };
 
 
 export type QueryGroupByToolArgs = {
   by: Array<ToolScalarFieldEnum>;
-  having?: Maybe<ToolScalarWhereWithAggregatesInput>;
-  orderBy?: Maybe<Array<ToolOrderByWithAggregationInput>>;
-  skip?: Maybe<Scalars['Int']>;
-  take?: Maybe<Scalars['Int']>;
-  where?: Maybe<ToolWhereInput>;
+  having?: InputMaybe<ToolScalarWhereWithAggregatesInput>;
+  orderBy?: InputMaybe<Array<ToolOrderByWithAggregationInput>>;
+  skip?: InputMaybe<Scalars['Int']>;
+  take?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<ToolWhereInput>;
 };
 
 
@@ -259,12 +260,12 @@ export type QueryToolArgs = {
 
 
 export type QueryToolsArgs = {
-  cursor?: Maybe<ToolWhereUniqueInput>;
-  distinct?: Maybe<Array<ToolScalarFieldEnum>>;
-  orderBy?: Maybe<Array<ToolOrderByWithRelationInput>>;
-  skip?: Maybe<Scalars['Int']>;
-  take?: Maybe<Scalars['Int']>;
-  where?: Maybe<ToolWhereInput>;
+  cursor?: InputMaybe<ToolWhereUniqueInput>;
+  distinct?: InputMaybe<Array<ToolScalarFieldEnum>>;
+  orderBy?: InputMaybe<Array<ToolOrderByWithRelationInput>>;
+  skip?: InputMaybe<Scalars['Int']>;
+  take?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<ToolWhereInput>;
 };
 
 export enum SortOrder {
@@ -273,69 +274,69 @@ export enum SortOrder {
 }
 
 export type StringFieldUpdateOperationsInput = {
-  set?: Maybe<Scalars['String']>;
+  set?: InputMaybe<Scalars['String']>;
 };
 
 export type StringFilter = {
-  contains?: Maybe<Scalars['String']>;
-  endsWith?: Maybe<Scalars['String']>;
-  equals?: Maybe<Scalars['String']>;
-  gt?: Maybe<Scalars['String']>;
-  gte?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Scalars['String']>>;
-  lt?: Maybe<Scalars['String']>;
-  lte?: Maybe<Scalars['String']>;
-  not?: Maybe<NestedStringFilter>;
-  notIn?: Maybe<Array<Scalars['String']>>;
-  startsWith?: Maybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars['String']>;
+  endsWith?: InputMaybe<Scalars['String']>;
+  equals?: InputMaybe<Scalars['String']>;
+  gt?: InputMaybe<Scalars['String']>;
+  gte?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<Scalars['String']>>;
+  lt?: InputMaybe<Scalars['String']>;
+  lte?: InputMaybe<Scalars['String']>;
+  not?: InputMaybe<NestedStringFilter>;
+  notIn?: InputMaybe<Array<Scalars['String']>>;
+  startsWith?: InputMaybe<Scalars['String']>;
 };
 
 export type StringNullableFilter = {
-  contains?: Maybe<Scalars['String']>;
-  endsWith?: Maybe<Scalars['String']>;
-  equals?: Maybe<Scalars['String']>;
-  gt?: Maybe<Scalars['String']>;
-  gte?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Scalars['String']>>;
-  lt?: Maybe<Scalars['String']>;
-  lte?: Maybe<Scalars['String']>;
-  not?: Maybe<NestedStringNullableFilter>;
-  notIn?: Maybe<Array<Scalars['String']>>;
-  startsWith?: Maybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars['String']>;
+  endsWith?: InputMaybe<Scalars['String']>;
+  equals?: InputMaybe<Scalars['String']>;
+  gt?: InputMaybe<Scalars['String']>;
+  gte?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<Scalars['String']>>;
+  lt?: InputMaybe<Scalars['String']>;
+  lte?: InputMaybe<Scalars['String']>;
+  not?: InputMaybe<NestedStringNullableFilter>;
+  notIn?: InputMaybe<Array<Scalars['String']>>;
+  startsWith?: InputMaybe<Scalars['String']>;
 };
 
 export type StringNullableWithAggregatesFilter = {
-  _count?: Maybe<NestedIntNullableFilter>;
-  _max?: Maybe<NestedStringNullableFilter>;
-  _min?: Maybe<NestedStringNullableFilter>;
-  contains?: Maybe<Scalars['String']>;
-  endsWith?: Maybe<Scalars['String']>;
-  equals?: Maybe<Scalars['String']>;
-  gt?: Maybe<Scalars['String']>;
-  gte?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Scalars['String']>>;
-  lt?: Maybe<Scalars['String']>;
-  lte?: Maybe<Scalars['String']>;
-  not?: Maybe<NestedStringNullableWithAggregatesFilter>;
-  notIn?: Maybe<Array<Scalars['String']>>;
-  startsWith?: Maybe<Scalars['String']>;
+  _count?: InputMaybe<NestedIntNullableFilter>;
+  _max?: InputMaybe<NestedStringNullableFilter>;
+  _min?: InputMaybe<NestedStringNullableFilter>;
+  contains?: InputMaybe<Scalars['String']>;
+  endsWith?: InputMaybe<Scalars['String']>;
+  equals?: InputMaybe<Scalars['String']>;
+  gt?: InputMaybe<Scalars['String']>;
+  gte?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<Scalars['String']>>;
+  lt?: InputMaybe<Scalars['String']>;
+  lte?: InputMaybe<Scalars['String']>;
+  not?: InputMaybe<NestedStringNullableWithAggregatesFilter>;
+  notIn?: InputMaybe<Array<Scalars['String']>>;
+  startsWith?: InputMaybe<Scalars['String']>;
 };
 
 export type StringWithAggregatesFilter = {
-  _count?: Maybe<NestedIntFilter>;
-  _max?: Maybe<NestedStringFilter>;
-  _min?: Maybe<NestedStringFilter>;
-  contains?: Maybe<Scalars['String']>;
-  endsWith?: Maybe<Scalars['String']>;
-  equals?: Maybe<Scalars['String']>;
-  gt?: Maybe<Scalars['String']>;
-  gte?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Scalars['String']>>;
-  lt?: Maybe<Scalars['String']>;
-  lte?: Maybe<Scalars['String']>;
-  not?: Maybe<NestedStringWithAggregatesFilter>;
-  notIn?: Maybe<Array<Scalars['String']>>;
-  startsWith?: Maybe<Scalars['String']>;
+  _count?: InputMaybe<NestedIntFilter>;
+  _max?: InputMaybe<NestedStringFilter>;
+  _min?: InputMaybe<NestedStringFilter>;
+  contains?: InputMaybe<Scalars['String']>;
+  endsWith?: InputMaybe<Scalars['String']>;
+  equals?: InputMaybe<Scalars['String']>;
+  gt?: InputMaybe<Scalars['String']>;
+  gte?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<Scalars['String']>>;
+  lt?: InputMaybe<Scalars['String']>;
+  lte?: InputMaybe<Scalars['String']>;
+  not?: InputMaybe<NestedStringWithAggregatesFilter>;
+  notIn?: InputMaybe<Array<Scalars['String']>>;
+  startsWith?: InputMaybe<Scalars['String']>;
 };
 
 export type Tool = {
@@ -353,7 +354,7 @@ export type ToolAvgAggregate = {
 };
 
 export type ToolAvgOrderByAggregateInput = {
-  id?: Maybe<SortOrder>;
+  id?: InputMaybe<SortOrder>;
 };
 
 export type ToolCountAggregate = {
@@ -367,16 +368,16 @@ export type ToolCountAggregate = {
 };
 
 export type ToolCountOrderByAggregateInput = {
-  description?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  image?: Maybe<SortOrder>;
-  link?: Maybe<SortOrder>;
-  name?: Maybe<SortOrder>;
+  description?: InputMaybe<SortOrder>;
+  id?: InputMaybe<SortOrder>;
+  image?: InputMaybe<SortOrder>;
+  link?: InputMaybe<SortOrder>;
+  name?: InputMaybe<SortOrder>;
 };
 
 export type ToolCreateInput = {
   description: Scalars['String'];
-  image?: Maybe<Scalars['String']>;
+  image?: InputMaybe<Scalars['String']>;
   link: Scalars['String'];
   name: Scalars['String'];
 };
@@ -405,11 +406,11 @@ export type ToolMaxAggregate = {
 };
 
 export type ToolMaxOrderByAggregateInput = {
-  description?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  image?: Maybe<SortOrder>;
-  link?: Maybe<SortOrder>;
-  name?: Maybe<SortOrder>;
+  description?: InputMaybe<SortOrder>;
+  id?: InputMaybe<SortOrder>;
+  image?: InputMaybe<SortOrder>;
+  link?: InputMaybe<SortOrder>;
+  name?: InputMaybe<SortOrder>;
 };
 
 export type ToolMinAggregate = {
@@ -422,32 +423,32 @@ export type ToolMinAggregate = {
 };
 
 export type ToolMinOrderByAggregateInput = {
-  description?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  image?: Maybe<SortOrder>;
-  link?: Maybe<SortOrder>;
-  name?: Maybe<SortOrder>;
+  description?: InputMaybe<SortOrder>;
+  id?: InputMaybe<SortOrder>;
+  image?: InputMaybe<SortOrder>;
+  link?: InputMaybe<SortOrder>;
+  name?: InputMaybe<SortOrder>;
 };
 
 export type ToolOrderByWithAggregationInput = {
-  _avg?: Maybe<ToolAvgOrderByAggregateInput>;
-  _count?: Maybe<ToolCountOrderByAggregateInput>;
-  _max?: Maybe<ToolMaxOrderByAggregateInput>;
-  _min?: Maybe<ToolMinOrderByAggregateInput>;
-  _sum?: Maybe<ToolSumOrderByAggregateInput>;
-  description?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  image?: Maybe<SortOrder>;
-  link?: Maybe<SortOrder>;
-  name?: Maybe<SortOrder>;
+  _avg?: InputMaybe<ToolAvgOrderByAggregateInput>;
+  _count?: InputMaybe<ToolCountOrderByAggregateInput>;
+  _max?: InputMaybe<ToolMaxOrderByAggregateInput>;
+  _min?: InputMaybe<ToolMinOrderByAggregateInput>;
+  _sum?: InputMaybe<ToolSumOrderByAggregateInput>;
+  description?: InputMaybe<SortOrder>;
+  id?: InputMaybe<SortOrder>;
+  image?: InputMaybe<SortOrder>;
+  link?: InputMaybe<SortOrder>;
+  name?: InputMaybe<SortOrder>;
 };
 
 export type ToolOrderByWithRelationInput = {
-  description?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  image?: Maybe<SortOrder>;
-  link?: Maybe<SortOrder>;
-  name?: Maybe<SortOrder>;
+  description?: InputMaybe<SortOrder>;
+  id?: InputMaybe<SortOrder>;
+  image?: InputMaybe<SortOrder>;
+  link?: InputMaybe<SortOrder>;
+  name?: InputMaybe<SortOrder>;
 };
 
 export enum ToolScalarFieldEnum {
@@ -459,14 +460,14 @@ export enum ToolScalarFieldEnum {
 }
 
 export type ToolScalarWhereWithAggregatesInput = {
-  AND?: Maybe<Array<ToolScalarWhereWithAggregatesInput>>;
-  NOT?: Maybe<Array<ToolScalarWhereWithAggregatesInput>>;
-  OR?: Maybe<Array<ToolScalarWhereWithAggregatesInput>>;
-  description?: Maybe<StringWithAggregatesFilter>;
-  id?: Maybe<IntWithAggregatesFilter>;
-  image?: Maybe<StringNullableWithAggregatesFilter>;
-  link?: Maybe<StringWithAggregatesFilter>;
-  name?: Maybe<StringWithAggregatesFilter>;
+  AND?: InputMaybe<Array<ToolScalarWhereWithAggregatesInput>>;
+  NOT?: InputMaybe<Array<ToolScalarWhereWithAggregatesInput>>;
+  OR?: InputMaybe<Array<ToolScalarWhereWithAggregatesInput>>;
+  description?: InputMaybe<StringWithAggregatesFilter>;
+  id?: InputMaybe<IntWithAggregatesFilter>;
+  image?: InputMaybe<StringNullableWithAggregatesFilter>;
+  link?: InputMaybe<StringWithAggregatesFilter>;
+  name?: InputMaybe<StringWithAggregatesFilter>;
 };
 
 export type ToolSumAggregate = {
@@ -475,65 +476,65 @@ export type ToolSumAggregate = {
 };
 
 export type ToolSumOrderByAggregateInput = {
-  id?: Maybe<SortOrder>;
+  id?: InputMaybe<SortOrder>;
 };
 
 export type ToolUpdateInput = {
-  description?: Maybe<StringFieldUpdateOperationsInput>;
-  image?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  link?: Maybe<StringFieldUpdateOperationsInput>;
-  name?: Maybe<StringFieldUpdateOperationsInput>;
+  description?: InputMaybe<StringFieldUpdateOperationsInput>;
+  image?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  link?: InputMaybe<StringFieldUpdateOperationsInput>;
+  name?: InputMaybe<StringFieldUpdateOperationsInput>;
 };
 
 export type ToolUpdateManyMutationInput = {
-  description?: Maybe<StringFieldUpdateOperationsInput>;
-  image?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  link?: Maybe<StringFieldUpdateOperationsInput>;
-  name?: Maybe<StringFieldUpdateOperationsInput>;
+  description?: InputMaybe<StringFieldUpdateOperationsInput>;
+  image?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
+  link?: InputMaybe<StringFieldUpdateOperationsInput>;
+  name?: InputMaybe<StringFieldUpdateOperationsInput>;
 };
 
 export type ToolWhereInput = {
-  AND?: Maybe<Array<ToolWhereInput>>;
-  NOT?: Maybe<Array<ToolWhereInput>>;
-  OR?: Maybe<Array<ToolWhereInput>>;
-  description?: Maybe<StringFilter>;
-  id?: Maybe<IntFilter>;
-  image?: Maybe<StringNullableFilter>;
-  link?: Maybe<StringFilter>;
-  name?: Maybe<StringFilter>;
+  AND?: InputMaybe<Array<ToolWhereInput>>;
+  NOT?: InputMaybe<Array<ToolWhereInput>>;
+  OR?: InputMaybe<Array<ToolWhereInput>>;
+  description?: InputMaybe<StringFilter>;
+  id?: InputMaybe<IntFilter>;
+  image?: InputMaybe<StringNullableFilter>;
+  link?: InputMaybe<StringFilter>;
+  name?: InputMaybe<StringFilter>;
 };
 
 export type ToolWhereUniqueInput = {
-  id?: Maybe<Scalars['Int']>;
-  name?: Maybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['Int']>;
+  name?: InputMaybe<Scalars['String']>;
 };
 
 export type CreateToolMutationVariables = Exact<{
   name: Scalars['String'];
   description: Scalars['String'];
   link: Scalars['String'];
-  image?: Maybe<Scalars['String']>;
+  image?: InputMaybe<Scalars['String']>;
 }>;
 
 
-export type CreateToolMutation = { __typename?: 'Mutation', createTool: { __typename?: 'Tool', id: number } };
+export type CreateToolMutation = { __typename?: 'Mutation', createOneTool: { __typename?: 'Tool', id: number } };
 
 export type ToolsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ToolsQuery = { __typename?: 'Query', tools: Array<{ __typename?: 'Tool', id: number, name: string, description: string, link: string, image?: string | null | undefined }> };
+export type ToolsQuery = { __typename?: 'Query', tools: Array<{ __typename?: 'Tool', id: number, name: string, description: string, link: string, image?: string | null }> };
 
 export type ToolQueryVariables = Exact<{
   id: Scalars['Int'];
 }>;
 
 
-export type ToolQuery = { __typename?: 'Query', tool?: { __typename?: 'Tool', id: number, name: string, description: string, link: string, image?: string | null | undefined } | null | undefined };
+export type ToolQuery = { __typename?: 'Query', tool?: { __typename?: 'Tool', id: number, name: string, description: string, link: string, image?: string | null } | null };
 
 
 export const CreateToolDocument = gql`
     mutation CreateTool($name: String!, $description: String!, $link: String!, $image: String) {
-  createTool(
+  createOneTool(
     data: {name: $name, description: $description, link: $link, image: $image}
   ) {
     id

@@ -1,26 +1,12 @@
-import { Button, Grid, Theme, Link as MUILink, Typography, Breadcrumbs } from '@mui/material';
-import { makeStyles } from '@mui/styles';
-import Link from 'next/link';
-import { ReactElement } from 'react';
-import { useRouter } from 'next/router';
+import { Breadcrumbs, Button, Grid, Link as MUILink, Typography } from '@mui/material';
 import Layout from 'components/layout';
 import Media from 'components/Media';
 import gql from 'graphql-tag';
+import theme from 'lib/theme';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { ReactElement } from 'react';
 import { useToolQuery } from 'types/gen/graphql-types';
-
-const useStyles = makeStyles((theme: Theme) => ({
-    description: {
-        maxWidth: '80ch',
-        paddingLeft: 100,
-    },
-    root: {
-        padding: '.5em 2em',
-    },
-    title: {
-        paddingLeft: '1em',
-        color: theme.palette.text.secondary,
-    },
-}));
 
 interface URLParams {
     id?: string;
@@ -39,14 +25,13 @@ export const QUERY_TOOL = gql`
 `;
 
 export default function ToolInfo(): ReactElement {
-    const classes = useStyles();
     const { query }: { query: URLParams } = useRouter();
     // client side fetch
     const { data } = useToolQuery({ variables: { id: Number(query.id) } });
 
     if (!data) {
         return (
-            <Grid container spacing={4} className={classes.root}>
+            <Grid container spacing={4} sx={{ padding: '.5em 2em' }}>
                 <Grid item xs={12}>
                     <Link href="/" passHref>
                         <Breadcrumbs aria-label="breadcrumb">Home</Breadcrumbs>
@@ -62,7 +47,7 @@ export default function ToolInfo(): ReactElement {
     return (
         <>
             <Layout title={`${data?.tool?.name} | Next.js example`}>
-                <Grid container spacing={4} className={classes.root}>
+                <Grid container spacing={4} sx={{ padding: '.5em 2em' }}>
                     <Grid item xs={12}>
                         <Breadcrumbs aria-label="breadcrumb">
                             <Link href="/" passHref>
@@ -75,12 +60,12 @@ export default function ToolInfo(): ReactElement {
                         {data?.tool?.image && (
                             <Media image={data?.tool?.image} name={data?.tool?.name} aria-hidden="true" />
                         )}
-                        <Typography variant="h2" className={classes.title}>
+                        <Typography variant="h2" sx={{ paddingLeft: '1em', color: theme.palette.text.secondary }}>
                             {data?.tool?.name}
                         </Typography>
                     </Grid>
                     <Grid item xs={12} container justifyContent="center">
-                        <Typography variant="body1" className={classes.description}>
+                        <Typography variant="body1" sx={{ maxWidth: '80ch', paddingLeft: 100 }}>
                             {data?.tool?.description}
                         </Typography>
                     </Grid>
