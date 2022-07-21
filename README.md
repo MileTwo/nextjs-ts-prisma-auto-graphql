@@ -44,6 +44,7 @@
         -   [TypeGraphQL-Prisma automatic CRUD plugin](https://prisma.typegraphql.com/)
     -   [GraphQL code generator](https://www.graphql-code-generator.com/)
 -   [Prisma](https://www.prisma.io/)
+    -   [Entity Relationship Diagram auto-generator](https://github.com/keonik/prisma-erd-generator)
 -   [Material-UI](https://material-ui.com/)
 -   [React Hook Form](https://react-hook-form.com/)
 -   Quality tools

@@ -1,34 +1,30 @@
 import { Typography } from '@mui/material';
-import { makeStyles, createStyles } from '@mui/styles';
-import { ReactElement } from 'react';
+import { styled } from '@mui/system';
 import Head from 'next/head';
-
-const useStyles = makeStyles(() =>
-    createStyles({
-        header: {
-            padding: '1em 2em',
-        },
-    })
-);
+import { ReactElement } from 'react';
 
 interface LayoutProps {
     children: ReactElement[] | ReactElement | string;
     title: string;
 }
 
-const Layout = ({ children, title }: LayoutProps): ReactElement => {
-    const classes = useStyles();
+const StyledHeader = styled('header')({
+    header: {
+        padding: '1em 2em',
+    },
+});
 
+const Layout = ({ children, title }: LayoutProps): ReactElement => {
     return (
         <>
             <Head>
                 <title>{title}</title>
             </Head>
-            <header className={classes.header}>
+            <StyledHeader>
                 <Typography variant="h4" component="h1" gutterBottom>
                     Next.js example
                 </Typography>
-            </header>
+            </StyledHeader>
             <main>{children}</main>
         </>
     );

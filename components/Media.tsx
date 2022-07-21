@@ -1,7 +1,6 @@
-import React, { ReactElement } from 'react';
+import { Avatar } from '@mui/material';
 import NextImage from 'next/image';
-import { Avatar, Theme } from '@mui/material';
-import { createStyles, makeStyles } from '@mui/styles';
+import React, { ReactElement } from 'react';
 import { Maybe } from 'types/gen/graphql-types';
 
 interface Props {
@@ -9,21 +8,17 @@ interface Props {
     name: string;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        avatar: {
-            color: theme.palette.common.white,
-            backgroundColor: theme.palette.primary.main,
-        },
-    })
-);
-
 export default function Media({ image, name }: Props): ReactElement {
     const firstLetter = name.slice(0, 1).toUpperCase();
-    const classes = useStyles();
 
     if (!image) {
-        return <Avatar className={classes.avatar}>{firstLetter}</Avatar>;
+        return (
+            <Avatar
+                sx={(theme) => ({ color: theme.palette.common.white, backgroundColor: theme.palette.primary.main })}
+            >
+                {firstLetter}
+            </Avatar>
+        );
     }
 
     if (image.startsWith('/')) {

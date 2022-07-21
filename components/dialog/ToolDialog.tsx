@@ -1,10 +1,10 @@
-import { Dialog, DialogTitle, DialogContent, Grid, TextField, DialogActions, Button } from '@mui/material';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, TextField } from '@mui/material';
 import { Tool } from '@prisma/client';
 import gql from 'graphql-tag';
+import { QUERY_TOOLS } from 'pages/index';
 import React, { ReactElement } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useCreateToolMutation } from 'types/gen/graphql-types';
-import { QUERY_TOOLS } from 'pages/index';
 
 interface Props {
     open: boolean;
@@ -13,7 +13,7 @@ interface Props {
 
 export const MUTATION_CREATE_TOOL = gql`
     mutation CreateTool($name: String!, $description: String!, $link: String!, $image: String) {
-        createTool(data: { name: $name, description: $description, link: $link, image: $image }) {
+        createOneTool(data: { name: $name, description: $description, link: $link, image: $image }) {
             id
         }
     }
