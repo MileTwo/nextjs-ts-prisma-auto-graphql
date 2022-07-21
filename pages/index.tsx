@@ -4,7 +4,6 @@ import ToolDialog from 'components/dialog/ToolDialog';
 import Layout from 'components/layout';
 import { LinkProps } from 'components/link/Link';
 import ListItem from 'components/list/ListItem';
-import theme from 'lib/theme';
 import { useState } from 'react';
 import { useToolsQuery } from 'types/gen/graphql-types';
 
@@ -53,13 +52,13 @@ export default function Home() {
                         <Grid item container justifyContent="center">
                             <List
                                 aria-label={data?.tools.map((tool) => tool.name).join(', ')}
-                                sx={{
+                                sx={(theme) => ({
                                     minWidth: theme.breakpoints.values.sm,
                                     [theme.breakpoints.down('sm')]: {
                                         width: '100%',
                                         minWidth: 100,
                                     },
-                                }}
+                                })}
                             >
                                 {data?.tools.map(({ name, image, id }) => {
                                     const link: LinkProps = {

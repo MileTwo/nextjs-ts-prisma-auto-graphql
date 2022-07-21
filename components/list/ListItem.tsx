@@ -1,5 +1,4 @@
 import { Avatar, Grid, ListItem as MUIListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
-import theme from 'lib/theme';
 import { Maybe } from 'types/gen/graphql-types';
 import Link from '../link/Link';
 import Media from '../Media';
@@ -21,7 +20,7 @@ export default function ListItem({ name, image, link }: Props) {
         <MUIListItem divider>
             <Grid container alignItems="center">
                 <ListItemAvatar>
-                    <Avatar alt={name} sx={{ backgroundColor: theme.palette.grey[100] }}>
+                    <Avatar alt={name} sx={(theme) => ({ backgroundColor: theme.palette.grey[100] })}>
                         {/* NextJS Image optimization example. Props are src(any file under the public dir), width, and height */}
                         <Media image={image} name={name} />
                     </Avatar>
@@ -34,7 +33,7 @@ export default function ListItem({ name, image, link }: Props) {
                     item
                     xs={12}
                     md={3}
-                    sx={{ justify: 'center', padding: theme.spacing(2) }}
+                    sx={(theme) => ({ justify: 'center', padding: theme.spacing(2) })}
                     justifyContent="flex-end"
                     alignItems="center"
                 >

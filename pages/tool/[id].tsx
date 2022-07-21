@@ -2,7 +2,6 @@ import { Breadcrumbs, Button, Grid, Link as MUILink, Typography } from '@mui/mat
 import Layout from 'components/layout';
 import Media from 'components/Media';
 import gql from 'graphql-tag';
-import theme from 'lib/theme';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ReactElement } from 'react';
@@ -60,12 +59,15 @@ export default function ToolInfo(): ReactElement {
                         {data?.tool?.image && (
                             <Media image={data?.tool?.image} name={data?.tool?.name} aria-hidden="true" />
                         )}
-                        <Typography variant="h2" sx={{ paddingLeft: '1em', color: theme.palette.text.secondary }}>
+                        <Typography
+                            variant="h2"
+                            sx={(theme) => ({ paddingLeft: '1em', color: theme.palette.text.secondary })}
+                        >
                             {data?.tool?.name}
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} container justifyContent="center">
-                        <Typography variant="body1" sx={{ maxWidth: '80ch', paddingLeft: 100 }}>
+                    <Grid item xs={12} container justifyContent="center" alignItems="center">
+                        <Typography variant="body1" sx={{ maxWidth: '80ch' }}>
                             {data?.tool?.description}
                         </Typography>
                     </Grid>

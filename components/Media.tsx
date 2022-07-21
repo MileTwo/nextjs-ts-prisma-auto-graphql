@@ -1,5 +1,4 @@
 import { Avatar } from '@mui/material';
-import theme from 'lib/theme';
 import NextImage from 'next/image';
 import React, { ReactElement } from 'react';
 import { Maybe } from 'types/gen/graphql-types';
@@ -14,7 +13,9 @@ export default function Media({ image, name }: Props): ReactElement {
 
     if (!image) {
         return (
-            <Avatar sx={{ color: theme.palette.common.white, backgroundColor: theme.palette.primary.main }}>
+            <Avatar
+                sx={(theme) => ({ color: theme.palette.common.white, backgroundColor: theme.palette.primary.main })}
+            >
                 {firstLetter}
             </Avatar>
         );
