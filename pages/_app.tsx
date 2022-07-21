@@ -1,15 +1,9 @@
-import { AppProps } from 'next/app';
-import { ThemeProvider, Theme, StyledEngineProvider } from '@mui/material/styles';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import CssBaseline from '@mui/material/CssBaseline';
+import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
+import { AppProps } from 'next/app';
 import React, { useEffect } from 'react';
-import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
-
 import theme from '../lib/theme';
-
-declare module '@mui/styles/defaultTheme' {
-    // eslint-disable-next-line @typescript-eslint/no-empty-interface
-    interface DefaultTheme extends Theme {}
-}
 
 export const client = new ApolloClient({
     uri: '/api/graphql',
