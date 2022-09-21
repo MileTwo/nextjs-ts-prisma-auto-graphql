@@ -87,7 +87,7 @@
         "@types/node": "^18.7.14",
         "@types/react": "^18.0.18",
         "@types/react-dom": "^18.0.6",
-        "@typescript-eslint/eslint-plugin": "^5.36.1",
+        "@typescript-eslint/eslint-plugin": "^5.38.0",
         "@typescript-eslint/parser": "^5.36.1",
         "babel-eslint": "^10.1.0",
         "babel-jest": "^28.1.3",
