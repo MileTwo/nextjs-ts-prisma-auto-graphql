@@ -1,10 +1,10 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, TextField } from '@mui/material';
 import { Tool } from '@prisma/client';
 import gql from 'graphql-tag';
-import { QUERY_TOOLS } from 'pages/index';
+import { QUERY_TOOLS } from 'src/pages/index';
 import React, { ReactElement } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { useCreateToolMutation } from 'types/gen/graphql-types';
+import { useCreateToolMutation } from 'src/server/graphql/gen/graphql-types';
 
 interface Props {
     open: boolean;

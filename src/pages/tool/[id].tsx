@@ -1,11 +1,11 @@
 import { Breadcrumbs, Button, Grid, Link as MUILink, Typography } from '@mui/material';
-import Layout from 'components/layout';
-import Media from 'components/Media';
+import Layout from 'src/components/layout';
+import Media from 'src/components/Media';
 import gql from 'graphql-tag';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ReactElement } from 'react';
-import { useToolQuery } from 'types/gen/graphql-types';
+import { useToolQuery } from 'src/server/graphql/gen/graphql-types';
 
 interface URLParams {
     id?: string;

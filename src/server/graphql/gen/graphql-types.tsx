@@ -5,19 +5,21 @@ export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
+export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 const defaultOptions = {} as const;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: string;
-  String: string;
-  Boolean: boolean;
-  Int: number;
-  Float: number;
+  ID: { input: string; output: string; }
+  String: { input: string; output: string; }
+  Boolean: { input: boolean; output: boolean; }
+  Int: { input: number; output: number; }
+  Float: { input: number; output: number; }
 };
 
 export type AffectedRowsOutput = {
   __typename?: 'AffectedRowsOutput';
-  count: Scalars['Int'];
+  count: Scalars['Int']['output'];
 };
 
 export type AggregateTool = {
@@ -30,14 +32,14 @@ export type AggregateTool = {
 };
 
 export type IntFilter = {
-  equals?: InputMaybe<Scalars['Int']>;
-  gt?: InputMaybe<Scalars['Int']>;
-  gte?: InputMaybe<Scalars['Int']>;
-  in?: InputMaybe<Array<Scalars['Int']>>;
-  lt?: InputMaybe<Scalars['Int']>;
-  lte?: InputMaybe<Scalars['Int']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
+  gt?: InputMaybe<Scalars['Int']['input']>;
+  gte?: InputMaybe<Scalars['Int']['input']>;
+  in?: InputMaybe<Array<Scalars['Int']['input']>>;
+  lt?: InputMaybe<Scalars['Int']['input']>;
+  lte?: InputMaybe<Scalars['Int']['input']>;
   not?: InputMaybe<NestedIntFilter>;
-  notIn?: InputMaybe<Array<Scalars['Int']>>;
+  notIn?: InputMaybe<Array<Scalars['Int']['input']>>;
 };
 
 export type IntWithAggregatesFilter = {
@@ -46,14 +48,14 @@ export type IntWithAggregatesFilter = {
   _max?: InputMaybe<NestedIntFilter>;
   _min?: InputMaybe<NestedIntFilter>;
   _sum?: InputMaybe<NestedIntFilter>;
-  equals?: InputMaybe<Scalars['Int']>;
-  gt?: InputMaybe<Scalars['Int']>;
-  gte?: InputMaybe<Scalars['Int']>;
-  in?: InputMaybe<Array<Scalars['Int']>>;
-  lt?: InputMaybe<Scalars['Int']>;
-  lte?: InputMaybe<Scalars['Int']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
+  gt?: InputMaybe<Scalars['Int']['input']>;
+  gte?: InputMaybe<Scalars['Int']['input']>;
+  in?: InputMaybe<Array<Scalars['Int']['input']>>;
+  lt?: InputMaybe<Scalars['Int']['input']>;
+  lte?: InputMaybe<Scalars['Int']['input']>;
   not?: InputMaybe<NestedIntWithAggregatesFilter>;
-  notIn?: InputMaybe<Array<Scalars['Int']>>;
+  notIn?: InputMaybe<Array<Scalars['Int']['input']>>;
 };
 
 export type Mutation = {
@@ -101,36 +103,36 @@ export type MutationUpsertOneToolArgs = {
 };
 
 export type NestedFloatFilter = {
-  equals?: InputMaybe<Scalars['Float']>;
-  gt?: InputMaybe<Scalars['Float']>;
-  gte?: InputMaybe<Scalars['Float']>;
-  in?: InputMaybe<Array<Scalars['Float']>>;
-  lt?: InputMaybe<Scalars['Float']>;
-  lte?: InputMaybe<Scalars['Float']>;
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  gt?: InputMaybe<Scalars['Float']['input']>;
+  gte?: InputMaybe<Scalars['Float']['input']>;
+  in?: InputMaybe<Array<Scalars['Float']['input']>>;
+  lt?: InputMaybe<Scalars['Float']['input']>;
+  lte?: InputMaybe<Scalars['Float']['input']>;
   not?: InputMaybe<NestedFloatFilter>;
-  notIn?: InputMaybe<Array<Scalars['Float']>>;
+  notIn?: InputMaybe<Array<Scalars['Float']['input']>>;
 };
 
 export type NestedIntFilter = {
-  equals?: InputMaybe<Scalars['Int']>;
-  gt?: InputMaybe<Scalars['Int']>;
-  gte?: InputMaybe<Scalars['Int']>;
-  in?: InputMaybe<Array<Scalars['Int']>>;
-  lt?: InputMaybe<Scalars['Int']>;
-  lte?: InputMaybe<Scalars['Int']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
+  gt?: InputMaybe<Scalars['Int']['input']>;
+  gte?: InputMaybe<Scalars['Int']['input']>;
+  in?: InputMaybe<Array<Scalars['Int']['input']>>;
+  lt?: InputMaybe<Scalars['Int']['input']>;
+  lte?: InputMaybe<Scalars['Int']['input']>;
   not?: InputMaybe<NestedIntFilter>;
-  notIn?: InputMaybe<Array<Scalars['Int']>>;
+  notIn?: InputMaybe<Array<Scalars['Int']['input']>>;
 };
 
 export type NestedIntNullableFilter = {
-  equals?: InputMaybe<Scalars['Int']>;
-  gt?: InputMaybe<Scalars['Int']>;
-  gte?: InputMaybe<Scalars['Int']>;
-  in?: InputMaybe<Array<Scalars['Int']>>;
-  lt?: InputMaybe<Scalars['Int']>;
-  lte?: InputMaybe<Scalars['Int']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
+  gt?: InputMaybe<Scalars['Int']['input']>;
+  gte?: InputMaybe<Scalars['Int']['input']>;
+  in?: InputMaybe<Array<Scalars['Int']['input']>>;
+  lt?: InputMaybe<Scalars['Int']['input']>;
+  lte?: InputMaybe<Scalars['Int']['input']>;
   not?: InputMaybe<NestedIntNullableFilter>;
-  notIn?: InputMaybe<Array<Scalars['Int']>>;
+  notIn?: InputMaybe<Array<Scalars['Int']['input']>>;
 };
 
 export type NestedIntWithAggregatesFilter = {
@@ -139,86 +141,93 @@ export type NestedIntWithAggregatesFilter = {
   _max?: InputMaybe<NestedIntFilter>;
   _min?: InputMaybe<NestedIntFilter>;
   _sum?: InputMaybe<NestedIntFilter>;
-  equals?: InputMaybe<Scalars['Int']>;
-  gt?: InputMaybe<Scalars['Int']>;
-  gte?: InputMaybe<Scalars['Int']>;
-  in?: InputMaybe<Array<Scalars['Int']>>;
-  lt?: InputMaybe<Scalars['Int']>;
-  lte?: InputMaybe<Scalars['Int']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
+  gt?: InputMaybe<Scalars['Int']['input']>;
+  gte?: InputMaybe<Scalars['Int']['input']>;
+  in?: InputMaybe<Array<Scalars['Int']['input']>>;
+  lt?: InputMaybe<Scalars['Int']['input']>;
+  lte?: InputMaybe<Scalars['Int']['input']>;
   not?: InputMaybe<NestedIntWithAggregatesFilter>;
-  notIn?: InputMaybe<Array<Scalars['Int']>>;
+  notIn?: InputMaybe<Array<Scalars['Int']['input']>>;
 };
 
 export type NestedStringFilter = {
-  contains?: InputMaybe<Scalars['String']>;
-  endsWith?: InputMaybe<Scalars['String']>;
-  equals?: InputMaybe<Scalars['String']>;
-  gt?: InputMaybe<Scalars['String']>;
-  gte?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
-  lt?: InputMaybe<Scalars['String']>;
-  lte?: InputMaybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  endsWith?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<Scalars['String']['input']>>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
   not?: InputMaybe<NestedStringFilter>;
-  notIn?: InputMaybe<Array<Scalars['String']>>;
-  startsWith?: InputMaybe<Scalars['String']>;
+  notIn?: InputMaybe<Array<Scalars['String']['input']>>;
+  startsWith?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type NestedStringNullableFilter = {
-  contains?: InputMaybe<Scalars['String']>;
-  endsWith?: InputMaybe<Scalars['String']>;
-  equals?: InputMaybe<Scalars['String']>;
-  gt?: InputMaybe<Scalars['String']>;
-  gte?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
-  lt?: InputMaybe<Scalars['String']>;
-  lte?: InputMaybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  endsWith?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<Scalars['String']['input']>>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
   not?: InputMaybe<NestedStringNullableFilter>;
-  notIn?: InputMaybe<Array<Scalars['String']>>;
-  startsWith?: InputMaybe<Scalars['String']>;
+  notIn?: InputMaybe<Array<Scalars['String']['input']>>;
+  startsWith?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type NestedStringNullableWithAggregatesFilter = {
   _count?: InputMaybe<NestedIntNullableFilter>;
   _max?: InputMaybe<NestedStringNullableFilter>;
   _min?: InputMaybe<NestedStringNullableFilter>;
-  contains?: InputMaybe<Scalars['String']>;
-  endsWith?: InputMaybe<Scalars['String']>;
-  equals?: InputMaybe<Scalars['String']>;
-  gt?: InputMaybe<Scalars['String']>;
-  gte?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
-  lt?: InputMaybe<Scalars['String']>;
-  lte?: InputMaybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  endsWith?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<Scalars['String']['input']>>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
   not?: InputMaybe<NestedStringNullableWithAggregatesFilter>;
-  notIn?: InputMaybe<Array<Scalars['String']>>;
-  startsWith?: InputMaybe<Scalars['String']>;
+  notIn?: InputMaybe<Array<Scalars['String']['input']>>;
+  startsWith?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type NestedStringWithAggregatesFilter = {
   _count?: InputMaybe<NestedIntFilter>;
   _max?: InputMaybe<NestedStringFilter>;
   _min?: InputMaybe<NestedStringFilter>;
-  contains?: InputMaybe<Scalars['String']>;
-  endsWith?: InputMaybe<Scalars['String']>;
-  equals?: InputMaybe<Scalars['String']>;
-  gt?: InputMaybe<Scalars['String']>;
-  gte?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
-  lt?: InputMaybe<Scalars['String']>;
-  lte?: InputMaybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  endsWith?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<Scalars['String']['input']>>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
   not?: InputMaybe<NestedStringWithAggregatesFilter>;
-  notIn?: InputMaybe<Array<Scalars['String']>>;
-  startsWith?: InputMaybe<Scalars['String']>;
+  notIn?: InputMaybe<Array<Scalars['String']['input']>>;
+  startsWith?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type NullableStringFieldUpdateOperationsInput = {
-  set?: InputMaybe<Scalars['String']>;
+  set?: InputMaybe<Scalars['String']['input']>;
 };
+
+export enum NullsOrder {
+  First = 'first',
+  Last = 'last'
+}
 
 export type Query = {
   __typename?: 'Query';
   aggregateTool: AggregateTool;
   findFirstTool?: Maybe<Tool>;
+  findFirstToolOrThrow?: Maybe<Tool>;
+  getTool?: Maybe<Tool>;
   groupByTool: Array<ToolGroupBy>;
   tool?: Maybe<Tool>;
   tools: Array<Tool>;
@@ -228,8 +237,8 @@ export type Query = {
 export type QueryAggregateToolArgs = {
   cursor?: InputMaybe<ToolWhereUniqueInput>;
   orderBy?: InputMaybe<Array<ToolOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']>;
-  take?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  take?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<ToolWhereInput>;
 };
 
@@ -238,9 +247,24 @@ export type QueryFindFirstToolArgs = {
   cursor?: InputMaybe<ToolWhereUniqueInput>;
   distinct?: InputMaybe<Array<ToolScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<ToolOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']>;
-  take?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  take?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<ToolWhereInput>;
+};
+
+
+export type QueryFindFirstToolOrThrowArgs = {
+  cursor?: InputMaybe<ToolWhereUniqueInput>;
+  distinct?: InputMaybe<Array<ToolScalarFieldEnum>>;
+  orderBy?: InputMaybe<Array<ToolOrderByWithRelationInput>>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  take?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<ToolWhereInput>;
+};
+
+
+export type QueryGetToolArgs = {
+  where: ToolWhereUniqueInput;
 };
 
 
@@ -248,8 +272,8 @@ export type QueryGroupByToolArgs = {
   by: Array<ToolScalarFieldEnum>;
   having?: InputMaybe<ToolScalarWhereWithAggregatesInput>;
   orderBy?: InputMaybe<Array<ToolOrderByWithAggregationInput>>;
-  skip?: InputMaybe<Scalars['Int']>;
-  take?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  take?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<ToolWhereInput>;
 };
 
@@ -263,8 +287,8 @@ export type QueryToolsArgs = {
   cursor?: InputMaybe<ToolWhereUniqueInput>;
   distinct?: InputMaybe<Array<ToolScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<ToolOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']>;
-  take?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  take?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<ToolWhereInput>;
 };
 
@@ -273,84 +297,89 @@ export enum SortOrder {
   Desc = 'desc'
 }
 
+export type SortOrderInput = {
+  nulls?: InputMaybe<NullsOrder>;
+  sort: SortOrder;
+};
+
 export type StringFieldUpdateOperationsInput = {
-  set?: InputMaybe<Scalars['String']>;
+  set?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type StringFilter = {
-  contains?: InputMaybe<Scalars['String']>;
-  endsWith?: InputMaybe<Scalars['String']>;
-  equals?: InputMaybe<Scalars['String']>;
-  gt?: InputMaybe<Scalars['String']>;
-  gte?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
-  lt?: InputMaybe<Scalars['String']>;
-  lte?: InputMaybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  endsWith?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<Scalars['String']['input']>>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
   not?: InputMaybe<NestedStringFilter>;
-  notIn?: InputMaybe<Array<Scalars['String']>>;
-  startsWith?: InputMaybe<Scalars['String']>;
+  notIn?: InputMaybe<Array<Scalars['String']['input']>>;
+  startsWith?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type StringNullableFilter = {
-  contains?: InputMaybe<Scalars['String']>;
-  endsWith?: InputMaybe<Scalars['String']>;
-  equals?: InputMaybe<Scalars['String']>;
-  gt?: InputMaybe<Scalars['String']>;
-  gte?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
-  lt?: InputMaybe<Scalars['String']>;
-  lte?: InputMaybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  endsWith?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<Scalars['String']['input']>>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
   not?: InputMaybe<NestedStringNullableFilter>;
-  notIn?: InputMaybe<Array<Scalars['String']>>;
-  startsWith?: InputMaybe<Scalars['String']>;
+  notIn?: InputMaybe<Array<Scalars['String']['input']>>;
+  startsWith?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type StringNullableWithAggregatesFilter = {
   _count?: InputMaybe<NestedIntNullableFilter>;
   _max?: InputMaybe<NestedStringNullableFilter>;
   _min?: InputMaybe<NestedStringNullableFilter>;
-  contains?: InputMaybe<Scalars['String']>;
-  endsWith?: InputMaybe<Scalars['String']>;
-  equals?: InputMaybe<Scalars['String']>;
-  gt?: InputMaybe<Scalars['String']>;
-  gte?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
-  lt?: InputMaybe<Scalars['String']>;
-  lte?: InputMaybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  endsWith?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<Scalars['String']['input']>>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
   not?: InputMaybe<NestedStringNullableWithAggregatesFilter>;
-  notIn?: InputMaybe<Array<Scalars['String']>>;
-  startsWith?: InputMaybe<Scalars['String']>;
+  notIn?: InputMaybe<Array<Scalars['String']['input']>>;
+  startsWith?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type StringWithAggregatesFilter = {
   _count?: InputMaybe<NestedIntFilter>;
   _max?: InputMaybe<NestedStringFilter>;
   _min?: InputMaybe<NestedStringFilter>;
-  contains?: InputMaybe<Scalars['String']>;
-  endsWith?: InputMaybe<Scalars['String']>;
-  equals?: InputMaybe<Scalars['String']>;
-  gt?: InputMaybe<Scalars['String']>;
-  gte?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
-  lt?: InputMaybe<Scalars['String']>;
-  lte?: InputMaybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  endsWith?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<Scalars['String']['input']>>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
   not?: InputMaybe<NestedStringWithAggregatesFilter>;
-  notIn?: InputMaybe<Array<Scalars['String']>>;
-  startsWith?: InputMaybe<Scalars['String']>;
+  notIn?: InputMaybe<Array<Scalars['String']['input']>>;
+  startsWith?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type Tool = {
   __typename?: 'Tool';
-  description: Scalars['String'];
-  id: Scalars['Int'];
-  image?: Maybe<Scalars['String']>;
-  link: Scalars['String'];
-  name: Scalars['String'];
+  description: Scalars['String']['output'];
+  id: Scalars['Int']['output'];
+  image?: Maybe<Scalars['String']['output']>;
+  link: Scalars['String']['output'];
+  name: Scalars['String']['output'];
 };
 
 export type ToolAvgAggregate = {
   __typename?: 'ToolAvgAggregate';
-  id?: Maybe<Scalars['Float']>;
+  id?: Maybe<Scalars['Float']['output']>;
 };
 
 export type ToolAvgOrderByAggregateInput = {
@@ -359,12 +388,12 @@ export type ToolAvgOrderByAggregateInput = {
 
 export type ToolCountAggregate = {
   __typename?: 'ToolCountAggregate';
-  _all: Scalars['Int'];
-  description: Scalars['Int'];
-  id: Scalars['Int'];
-  image: Scalars['Int'];
-  link: Scalars['Int'];
-  name: Scalars['Int'];
+  _all: Scalars['Int']['output'];
+  description: Scalars['Int']['output'];
+  id: Scalars['Int']['output'];
+  image: Scalars['Int']['output'];
+  link: Scalars['Int']['output'];
+  name: Scalars['Int']['output'];
 };
 
 export type ToolCountOrderByAggregateInput = {
@@ -376,10 +405,10 @@ export type ToolCountOrderByAggregateInput = {
 };
 
 export type ToolCreateInput = {
-  description: Scalars['String'];
-  image?: InputMaybe<Scalars['String']>;
-  link: Scalars['String'];
-  name: Scalars['String'];
+  description: Scalars['String']['input'];
+  image?: InputMaybe<Scalars['String']['input']>;
+  link: Scalars['String']['input'];
+  name: Scalars['String']['input'];
 };
 
 export type ToolGroupBy = {
@@ -389,20 +418,20 @@ export type ToolGroupBy = {
   _max?: Maybe<ToolMaxAggregate>;
   _min?: Maybe<ToolMinAggregate>;
   _sum?: Maybe<ToolSumAggregate>;
-  description: Scalars['String'];
-  id: Scalars['Int'];
-  image?: Maybe<Scalars['String']>;
-  link: Scalars['String'];
-  name: Scalars['String'];
+  description: Scalars['String']['output'];
+  id: Scalars['Int']['output'];
+  image?: Maybe<Scalars['String']['output']>;
+  link: Scalars['String']['output'];
+  name: Scalars['String']['output'];
 };
 
 export type ToolMaxAggregate = {
   __typename?: 'ToolMaxAggregate';
-  description?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['Int']>;
-  image?: Maybe<Scalars['String']>;
-  link?: Maybe<Scalars['String']>;
-  name?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['Int']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
+  link?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
 };
 
 export type ToolMaxOrderByAggregateInput = {
@@ -415,11 +444,11 @@ export type ToolMaxOrderByAggregateInput = {
 
 export type ToolMinAggregate = {
   __typename?: 'ToolMinAggregate';
-  description?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['Int']>;
-  image?: Maybe<Scalars['String']>;
-  link?: Maybe<Scalars['String']>;
-  name?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['Int']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
+  link?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
 };
 
 export type ToolMinOrderByAggregateInput = {
@@ -438,7 +467,7 @@ export type ToolOrderByWithAggregationInput = {
   _sum?: InputMaybe<ToolSumOrderByAggregateInput>;
   description?: InputMaybe<SortOrder>;
   id?: InputMaybe<SortOrder>;
-  image?: InputMaybe<SortOrder>;
+  image?: InputMaybe<SortOrderInput>;
   link?: InputMaybe<SortOrder>;
   name?: InputMaybe<SortOrder>;
 };
@@ -446,7 +475,7 @@ export type ToolOrderByWithAggregationInput = {
 export type ToolOrderByWithRelationInput = {
   description?: InputMaybe<SortOrder>;
   id?: InputMaybe<SortOrder>;
-  image?: InputMaybe<SortOrder>;
+  image?: InputMaybe<SortOrderInput>;
   link?: InputMaybe<SortOrder>;
   name?: InputMaybe<SortOrder>;
 };
@@ -472,7 +501,7 @@ export type ToolScalarWhereWithAggregatesInput = {
 
 export type ToolSumAggregate = {
   __typename?: 'ToolSumAggregate';
-  id?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['Int']['output']>;
 };
 
 export type ToolSumOrderByAggregateInput = {
@@ -505,15 +534,15 @@ export type ToolWhereInput = {
 };
 
 export type ToolWhereUniqueInput = {
-  id?: InputMaybe<Scalars['Int']>;
-  name?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['Int']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type CreateToolMutationVariables = Exact<{
-  name: Scalars['String'];
-  description: Scalars['String'];
-  link: Scalars['String'];
-  image?: InputMaybe<Scalars['String']>;
+  name: Scalars['String']['input'];
+  description: Scalars['String']['input'];
+  link: Scalars['String']['input'];
+  image?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
@@ -525,7 +554,7 @@ export type ToolsQueryVariables = Exact<{ [key: string]: never; }>;
 export type ToolsQuery = { __typename?: 'Query', tools: Array<{ __typename?: 'Tool', id: number, name: string, description: string, link: string, image?: string | null }> };
 
 export type ToolQueryVariables = Exact<{
-  id: Scalars['Int'];
+  id: Scalars['Int']['input'];
 }>;
 
 

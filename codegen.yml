@@ -1,9 +1,9 @@
 ## codegen.yml
 overwrite: true
 schema: 'http://localhost:3000/api/graphql'
-documents: '{components,pages}/**/*.{ts,tsx}'
+documents: 'src/**/*.{ts,tsx}'
 generates:
-    types/gen/graphql-types.tsx:
+    src/server/graphql/gen/graphql-types.tsx:
         config:
             dedupeOperationSuffix: true
             withHooks: true

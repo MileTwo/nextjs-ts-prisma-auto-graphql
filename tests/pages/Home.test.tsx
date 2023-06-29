@@ -1,6 +1,6 @@
 // you want to import from test-utils instead of testing-library/react since we overwrote the render function to support our wrapper providers
 import { render, screen, waitFor } from '../test-utils';
-import Home, { QUERY_TOOLS } from 'pages/index';
+import Home, { QUERY_TOOLS } from 'src/pages/index';
 import { tools } from 'lib/tools';
 
 const mocks = [

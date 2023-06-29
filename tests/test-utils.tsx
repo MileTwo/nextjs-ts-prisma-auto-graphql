@@ -28,6 +28,7 @@ type RenderOptions = DefaultParams[1] & { router?: Partial<NextRouter> };
 const mockRouter: NextRouter = {
     basePath: '',
     isReady: true,
+    forward: () => undefined,
     pathname: '/',
     route: '/',
     asPath: '/',

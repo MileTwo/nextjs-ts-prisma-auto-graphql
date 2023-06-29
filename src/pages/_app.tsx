@@ -3,7 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import { AppProps } from 'next/app';
 import React, { useEffect } from 'react';
-import theme from '../lib/theme';
+import theme from '../../lib/theme';
 
 export const client = new ApolloClient({
     uri: '/api/graphql',

@@ -1,7 +1,7 @@
 import { Avatar } from '@mui/material';
 import NextImage from 'next/image';
 import React, { ReactElement } from 'react';
-import { Maybe } from 'types/gen/graphql-types';
+import { Maybe } from 'src/server/graphql/gen/graphql-types';
 
 interface Props {
     image: Maybe<string> | undefined;
