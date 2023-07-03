@@ -80,7 +80,7 @@
         "@graphql-codegen/typescript": "^2.7.3",
         "@graphql-codegen/typescript-operations": "^2.5.3",
         "@graphql-codegen/typescript-react-apollo": "^3.3.3",
-        "@next/eslint-plugin-next": "^12.2.5",
+        "@next/eslint-plugin-next": "^13.4.7",
         "@testing-library/dom": "^8.17.1",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
