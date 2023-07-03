@@ -68,7 +68,7 @@
         "watch-queries": "graphql-codegen --config codegen.yml --watch"
     },
     "devDependencies": {
-        "@axe-core/react": "^4.4.4",
+        "@axe-core/react": "^4.7.3",
         "@babel/core": "^7.18.13",
         "@babel/node": "^7.18.10",
         "@babel/plugin-transform-react-jsx": "^7.18.10",
