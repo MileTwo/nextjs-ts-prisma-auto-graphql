@@ -1,6 +1,6 @@
 // https://github.com/mui/material-ui/blob/master/examples/nextjs-with-typescript/pages/_document.tsx
 
-import theme from 'lib/theme';
+import theme from '@/lib/theme';
 import * as React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';

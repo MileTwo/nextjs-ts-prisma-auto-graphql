@@ -1,7 +1,7 @@
 import { Avatar, Grid, ListItem as MUIListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
-import { Maybe } from 'types/gen/graphql-types';
 import Link from '../link/Link';
 import Media from '../Media';
+import { Maybe } from 'src/server/graphql/gen/graphql-types';
 
 export type Link = {
     label: string;

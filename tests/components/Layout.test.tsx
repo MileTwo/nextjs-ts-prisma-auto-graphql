@@ -1,5 +1,5 @@
 import { render, screen } from '../test-utils';
-import Layout from 'components/layout';
+import Layout from 'src/components/layout';
 
 describe('Home page', () => {
     it('should render without errors', async () => {

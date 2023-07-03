@@ -1,11 +1,11 @@
 import { gql } from '@apollo/client';
 import { Button, Grid, List, Typography } from '@mui/material';
-import ToolDialog from 'components/dialog/ToolDialog';
-import Layout from 'components/layout';
-import { LinkProps } from 'components/link/Link';
-import ListItem from 'components/list/ListItem';
+import ToolDialog from 'src/components/dialog/ToolDialog';
+import Layout from 'src/components/layout';
+import { LinkProps } from 'src/components/link/Link';
+import ListItem from 'src/components/list/ListItem';
 import { useState } from 'react';
-import { useToolsQuery } from 'types/gen/graphql-types';
+import { useToolsQuery } from 'src/server/graphql/gen/graphql-types';
 
 export const QUERY_TOOLS = gql`
     query Tools {

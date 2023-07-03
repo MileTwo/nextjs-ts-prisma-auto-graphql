@@ -7,7 +7,7 @@ import { NextRouter } from 'next/router';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material';
 import { MockedProvider, MockedResponse } from '@apollo/client/testing';
 
-import theme from 'lib/theme';
+import theme from '@/lib/theme';
 
 export * from '@testing-library/react';
 
@@ -28,6 +28,7 @@ type RenderOptions = DefaultParams[1] & { router?: Partial<NextRouter> };
 const mockRouter: NextRouter = {
     basePath: '',
     isReady: true,
+    forward: () => undefined,
     pathname: '/',
     route: '/',
     asPath: '/',
