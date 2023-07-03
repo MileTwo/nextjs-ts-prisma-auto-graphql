@@ -7,7 +7,7 @@ import { NextRouter } from 'next/router';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material';
 import { MockedProvider, MockedResponse } from '@apollo/client/testing';
 
-import theme from 'lib/theme';
+import theme from '@/lib/theme';
 
 export * from '@testing-library/react';
 

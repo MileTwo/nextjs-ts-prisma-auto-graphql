@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 
-import { tools } from '../lib/tools';
+import { tools } from '../src/lib/tools';
 const prisma = new PrismaClient();
 async function main() {
     for (const tool of tools) {
