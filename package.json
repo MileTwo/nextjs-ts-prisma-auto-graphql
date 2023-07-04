@@ -71,7 +71,7 @@
         "@graphql-codegen/typescript": "^4.0.1",
         "@graphql-codegen/typescript-operations": "^4.0.1",
         "@graphql-codegen/typescript-react-apollo": "^3.3.7",
-        "@next/eslint-plugin-next": "^13.4.7",
+        "@next/eslint-plugin-next": "^13.4.8",
         "@semantic-release/changelog": "^6.0.3",
         "@semantic-release/commit-analyzer": "^10.0.1",
         "@semantic-release/git": "^10.0.1",
