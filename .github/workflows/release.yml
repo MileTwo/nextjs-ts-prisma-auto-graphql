@@ -26,7 +26,7 @@ jobs:
               with:
                   node-version: 'lts/*'
             - name: Install dependencies
-              run: npm clean-install
+              run: npm clean-install && npm i -D @semantic-release/changelog @semantic-release/commit-analyzer @semantic-release/git @semantic-release/release-notes-generator
             - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
               run: npm audit signatures
             - name: Release
