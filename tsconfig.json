@@ -26,10 +26,10 @@
         "sourceMap": true,
         "outDir": "dist",
         "incremental": true,
-        "noEmit": true
+        "noEmit": false
     },
-    "exclude": ["node_modules"],
-    "include": ["**/*.ts", "**/*.tsx", "types.d.ts", "src/types/**/*.d.ts"],
+    "exclude": ["node_modules", "tests", "setupTests.ts"],
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/types/**/*.d.ts", "prisma/**/*.ts"],
     "ts-node": {
         "transpileOnly": true,
         "transpiler": "ts-node/transpilers/swc-experimental"

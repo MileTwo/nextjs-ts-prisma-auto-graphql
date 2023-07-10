@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "private": false,
     "dependencies": {
-        "@apollo/client": "^3.7.16",
+        "@apollo/client": "^3.7.17",
         "@emotion/cache": "^11.11.0",
         "@emotion/react": "^11.11.1",
         "@emotion/server": "^11.11.0",
@@ -59,7 +59,7 @@
         "start": "next start",
         "studio": "prisma studio",
         "test": "jest",
-        "type-check": "tsc",
+        "type-check": "tsc --noEmit",
         "type-check:watch": "tsc --watch --preserveWatchOutput",
         "update-deps": "npx npm-check-updates -i",
         "watch-queries": "graphql-codegen --config codegen.yml --watch"
@@ -77,7 +77,7 @@
         "@testing-library/dom": "^9.3.1",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^14.0.0",
-        "@types/node": "^20.4.0",
+        "@types/node": "^20.4.1",
         "@types/react": "^18.2.14",
         "@types/react-dom": "^18.2.6",
         "@typescript-eslint/eslint-plugin": "^5.61.0",
