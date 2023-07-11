@@ -94,7 +94,7 @@
         "next": "^13.4.9",
         "prettier": "^3.0.0",
         "prisma": "4.16.2",
-        "prisma-erd-generator": "^1.6.2",
+        "prisma-erd-generator": "^1.8.0",
         "ts-node": "^10.9.1",
         "typegraphql-prisma": "^0.26.0",
         "typescript": "^5.1.6"
